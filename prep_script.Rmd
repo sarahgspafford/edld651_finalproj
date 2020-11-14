@@ -90,7 +90,7 @@ stride <- read_sav("data/project_stride_data.sav") %>%
 head(stride)
 
 stridy <- stride %>%
-  filter(sexori <= 6 ) %>% 
+  filter(sexori <= 6) %>% 
     select(sexori,
            age,
            ethnic,
@@ -102,6 +102,40 @@ stridy <- stride %>%
 head(stridy)
 
 ```
+
+```{r tidy data}
+stridy_wide <- stridy %>% 
+  pivot_wider(
+    names_from = sexori,
+    values_from = ethnic
+  )
+
+stridy_long <- stridy_wide %>% 
+  pivot_longer(
+    cols = 7:12,
+    names_to = "sexori",
+    values_to = "ethnic"
+  )
+
+```
+```{r}
+stridy %>% 
+  sexori <- factor(stridy$sexori,
+                   levels = c("Gay",
+                   "Lesbian",
+                   "Queer",
+                   "Bisexual",
+                   "Homosexual",
+                   "Other - LGB")) %>% 
+  fct_inorder()
+
+stridy %>% 
+  group_by(sexori) %>% 
+  summarize(mean_disc = mean(dis_d_total)) %>% 
+  ggplot(aes(sexori, mean_disc)) +
+  geom_col()
+```
+
 
 # Introduction
 # Methods
