@@ -69,6 +69,11 @@ output            : papaja::apa6_pdf
 ```{r setup, include = FALSE}
 library("papaja")
 r_refs("r-references.bib")
+library(haven)
+library(janitor)
+library(tidyverse)
+library(apaTables)
+library(rio)
 ```
 
 ```{r global options}
@@ -79,8 +84,23 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r data import}
-library(haven)
-stride <- read_sav("data/project_stride_data.sav")
+stride <- read_sav("data/project_stride_data.sav") %>% 
+  as_tibble() %>% 
+  janitor::clean_names() 
+head(stride)
+
+stridy <- stride %>%
+  filter(sexori <= 6 ) %>% 
+    select(sexori,
+           age,
+           ethnic,
+           gender_2,
+           chr_gen_2,
+           perwellb_2,
+           dis_d_total,
+           connect)
+head(stridy)
+
 ```
 
 # Introduction
