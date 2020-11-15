@@ -94,7 +94,7 @@ stridy <- stride %>%
     select(sexori,
            age,
            ethnic,
-           gender_2,
+           gender,
            chr_gen_2,
            perwellb_2,
            dis_d_total,
@@ -119,21 +119,30 @@ stridy_long <- stridy_wide %>%
 
 ```
 ```{r}
-stridy %>% 
-  sexori <- factor(stridy$sexori,
-                   levels = c("Gay",
-                   "Lesbian",
-                   "Queer",
-                   "Bisexual",
-                   "Homosexual",
-                   "Other - LGB")) %>% 
-  fct_inorder()
+#stridy %>% 
+ # sexori <- factor(stridy$sexori,
+  #                 levels = c("Gay",
+   #                "Lesbian",
+    #               "Queer",
+     #              "Bisexual",
+      #             "Homosexual",
+       #            "Other - LGB")) %>% 
+  #fct_inorder()
+
+sexori <- stridy %>% 
+  mutate(sexori = as.factor(sexori))
 
 stridy %>% 
   group_by(sexori) %>% 
+  characterize(sexori) %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
   ggplot(aes(sexori, mean_disc)) +
-  geom_col()
+  geom_col() +
+  labs(title = "Everyday discrimination experiences",
+       subtitle = "Based on sexual orientation") +
+  xlab("Sexual orientation") +
+  ylab("Average number of everyday discrimination experiences")
+
 ```
 
 
