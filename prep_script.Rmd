@@ -65,6 +65,7 @@ library(rio)
 library(qwraps2)
 library(lm.beta)
 library(ggiraphExtra)
+library(psych)
 ```
 
 ```{r setup}
@@ -200,6 +201,20 @@ fit=lm(perwellb_2 ~ dis_d_total*chr_gen_2*connect, data=stridy)
 summary(fit)
 ggPredict(fit,interactive = TRUE)
 ```
+```{r correlation panels}
+
+
+pairs.panels(stridy[,-c(1:4, 9)], 
+             method = "pearson", 
+             hist.col = "darkmagenta",
+             density = FALSE,
+             ellipses = FALSE,
+             lm = TRUE, 
+             labels 
+             )
+
+```
+
 # Discussion
 
 
