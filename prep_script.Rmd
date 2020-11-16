@@ -63,6 +63,8 @@ library(tidyverse)
 library(apaTables)
 library(rio)
 library(qwraps2)
+library(lm.beta)
+library(ggiraphExtra)
 ```
 
 ```{r setup}
@@ -183,8 +185,14 @@ grouped_table
 We used `r cite_r("r-references.bib")` for all our analyses.
 
 
-# Results
+# Results  
+``` {r regression}
+mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
+summary(lm.beta(mod))
 
+?
+
+```
 # Discussion
 
 
