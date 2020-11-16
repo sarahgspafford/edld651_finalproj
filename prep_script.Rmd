@@ -94,40 +94,36 @@ head(stridy)
 ```
 
 ```{r tidy data, include = FALSE}
-stridy_wide <- stridy %>% 
+
+#stridy %>%
+#  mutate(ethnic = recode(ethnic,
+      #   `Black/African-American,` = "Black/African American",
+        # `White,` = "White"))
+
+stridy_wide <-stridy %>%
+  group_by(sexori, ethnic) %>%
+  characterize() %>%
+  summarize(mean_connect = mean(connect)) %>%
   pivot_wider(
-    names_from = sexori,
-    values_from = ethnic
+    names_from = ethnic,
+    values_from = mean_connect
   )
 
-stridy_long <- stridy_wide %>% 
-  pivot_longer(
-    cols = 7:12,
-    names_to = "sexori",
-    values_to = "ethnic"
-  )
+stridy_long <- stridy_wide %>%
+  pivot_longer(cols = c(2:4),
+               names_to = "Ethnicity",
+               values_to = "Connectedness")
+               
 
 ```
-```{r}
-#stridy %>% 
- # sexori <- factor(stridy$sexori,
-  #                 levels = c("Gay",
-   #                "Lesbian",
-    #               "Queer",
-     #              "Bisexual",
-      #             "Homosexual",
-       #            "Other - LGB")) %>% 
-  #fct_inorder()
 
-
-```
 ```{r mean plot, results="asis"}
 sexori <- stridy %>% 
   mutate(sexori = as.factor(sexori))
 
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
-  characterize(sexori) %>% 
+  characterize() %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
   ggplot(aes(sexori, mean_disc)) +
   geom_col(fill = "plum4", alpha = .75) +
