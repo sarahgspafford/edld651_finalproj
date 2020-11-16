@@ -13,18 +13,16 @@ author:
       - Writing - Original Draft Preparation
       - Writing - Review & Editing
   - name          : "Sarah Spafford"
-    affiliation   : "1,2"
+    affiliation   : "1"
     role:
       - Writing - Review & Editing
   - name          : "Heather Terral"
-    affiliation   : "1,2"
+    affiliation   : "1"
     role:
       - Writing - Review & Editing
 affiliation:
   - id            : "1"
-    institution   : ""
-  - id            : "2"
-    institution   : ""
+    institution   : "University of Oregon"
 
 authornote: |
   This will be an author note.
@@ -71,11 +69,11 @@ library(qwraps2)
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       message = FALSE,
-                     eval=FALSE
+                     eval=TRUE
                      )
 ```
 
-```{r data import}
+```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
   as_tibble() %>% 
   janitor::clean_names() 
@@ -95,7 +93,7 @@ head(stridy)
 
 ```
 
-```{r tidy data}
+```{r tidy data, include = FALSE}
 stridy_wide <- stridy %>% 
   pivot_wider(
     names_from = sexori,
