@@ -82,6 +82,7 @@ stride <- read_sav("data/project_stride_data.sav") %>%
 head(stride)
 
 stridy <- stride %>%
+  drop_na(perwellb_2, dis_d_total, chr_gen_2, connect) %>% 
   filter(sexori <= 6) %>% 
     select(sexori,
            age,
@@ -90,7 +91,12 @@ stridy <- stride %>%
            chr_gen_2,
            perwellb_2,
            dis_d_total,
-           connect)
+           connect) 
+stridy$perwell_b2 <- as.numeric(stridy$perwellb_2) 
+stridy$chr_gen_2 <- as.numeric(stridy$chr_gen_2) 
+stridy$sexori <- as.factor(stridy$sexori) 
+stridy$gender <- as.factor(stridy$gender) 
+stridy$ethnic <- as.factor(stridy$ethnic) 
 head(stridy)
 
 ```
@@ -190,8 +196,9 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
-?
-
+fit=lm(perwellb_2 ~ dis_d_total*chr_gen_2*connect, data=stridy)
+summary(fit)
+ggPredict(fit,interactive = TRUE)
 ```
 # Discussion
 
