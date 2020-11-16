@@ -22,29 +22,17 @@ author:
       - Writing - Review & Editing
 affiliation:
   - id            : "1"
-    institution   : "Wilhelm-Wundt-University"
+    institution   : ""
   - id            : "2"
-    institution   : "Konstanz Business School"
+    institution   : ""
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+  This will be an author note.
 
   Enter author note here.
 
 abstract: |
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  
-  One or two sentences to put the results into a more **general context**.
-  
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  This will be an abstract.
   
   <!-- https://tinyurl.com/ybremelq -->
   
@@ -53,7 +41,7 @@ wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
 
-floatsintext      : no
+floatsintext      : yes
 figurelist        : no
 tablelist         : no
 footnotelist      : no
@@ -131,10 +119,13 @@ stridy_long <- stridy_wide %>%
        #            "Other - LGB")) %>% 
   #fct_inorder()
 
+
+```
+```{r mean plot, results="asis"}
 sexori <- stridy %>% 
   mutate(sexori = as.factor(sexori))
 
-stridy %>% 
+mean_plot <- stridy %>% 
   group_by(sexori) %>% 
   characterize(sexori) %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
@@ -144,10 +135,11 @@ stridy %>%
        subtitle = "According to Sexual Orientation") +
   xlab("Sexual Orientation") +
   ylab("Average Discriminatory Experiences")
-
+plot(mean_plot)
 ```
 
-```{r summary table}
+
+```{r summary table, results= "asis"}
 library(qwraps2)
 
 options(qwraps2_markup = "markdown")
