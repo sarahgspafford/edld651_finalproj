@@ -197,9 +197,9 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
-fit=lm(perwellb_2 ~ dis_d_total*chr_gen_2*connect, data=stridy)
-summary(fit)
-ggPredict(fit,interactive = TRUE)
+# fit=lm(perwellb_2 ~ dis_d_total*chr_gen_2*connect, data=stridy)
+# summary(fit)
+# ggPredict(fit,interactive = TRUE)
 ```
 ```{r correlation panels}
 
