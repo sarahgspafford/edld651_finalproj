@@ -66,6 +66,7 @@ library(qwraps2)
 library(lm.beta)
 library(ggiraphExtra)
 library(psych)
+# You have so many packages I am not familiar with, I'm excited to open them up and see how they work!
 ```
 
 ```{r setup}
@@ -100,6 +101,7 @@ stridy$gender <- as.factor(stridy$gender)
 stridy$ethnic <- as.factor(stridy$ethnic) 
 head(stridy)
 
+# I'm assuming from looking at the data you imported and modified that your project has to do with discrimination and sexual orientation and I am very intrigued.
 ```
 
 ```{r tidy data, include = FALSE}
@@ -108,6 +110,8 @@ head(stridy)
 #  mutate(ethnic = recode(ethnic,
       #   `Black/African-American,` = "Black/African American",
         # `White,` = "White"))
+
+# Just wondering if looking into the data by race is your next step since this section of code is commented out. If so, really interesting and I'll be curious to see what it reveals.
 
 stridy_wide <-stridy %>%
   group_by(sexori, ethnic) %>%
@@ -130,6 +134,8 @@ stridy_long <- stridy_wide %>%
 sexori <- stridy %>% 
   mutate(sexori = as.factor(sexori))
 
+# Good choice on the bar chart to show this data. One thing I'll point out about it is that with the current dimensions it's a little hard to understand each category in relation as a result of the max creating columns that extend to the top of the y-axis. I'd also recommend adding some kind of time interval on the y-axis. I see it specifies in your title that the plot shows daily experiences, but for some reason as a reader I over-looked it initially and went straight to x-axis/y-axis so maybe some extra reminders in the plot itself would be helpful.
+
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
   characterize() %>% 
@@ -141,6 +147,8 @@ mean_plot <- stridy %>%
   xlab("Sexual Orientation") +
   ylab("Average Discriminatory Experiences")
 plot(mean_plot)
+
+# Not sure if you're all planning on exploring some visualizations with ethnicity/race and/or sexual orientation identification, but a facet wrap or a boxplot with some descriptive stats could be a good addition to show the relationships across nominal categories in your data.
 ```
 
 
@@ -176,6 +184,8 @@ grouped_table <- summary_table(stridy%>%
                                  mutate_at('sexori', characterize),
                                summaries = summary1, by = c("sexori"))
 grouped_table
+
+# What is "stridy" in the table? Some explanation or relabeling might be helpful for the reader!
 ```
 
 # Introduction
