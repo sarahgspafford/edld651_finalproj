@@ -84,23 +84,29 @@ stride <- read_sav("data/project_stride_data.sav") %>%
   janitor::clean_names() 
 head(stride)
 
+#CODEREVIEW_df: This is a nice way to pull in data, tidy it, and pick out the specific data that you want. Nice work! I 
+# had wondered about condensing a bit with the as.numeric and as.factor code lines; though, after a bit of trial and error
+# I didn't get very far in condensing. Overall, nice job!
 stridy <- stride %>%
   drop_na(perwellb_2, dis_d_total, chr_gen_2, connect) %>% 
   filter(sexori <= 6) %>% 
-    select(sexori,
-           age,
-           ethnic,
-           gender,
-           chr_gen_2,
-           perwellb_2,
-           dis_d_total,
-           connect) 
-stridy$perwell_b2 <- as.numeric(stridy$perwellb_2) 
-stridy$chr_gen_2 <- as.numeric(stridy$chr_gen_2) 
-stridy$sexori <- as.factor(stridy$sexori) 
-stridy$gender <- as.factor(stridy$gender) 
-stridy$ethnic <- as.factor(stridy$ethnic) 
+  select(sexori,
+       age,
+       ethnic,
+       gender,
+       chr_gen_2,
+       perwellb_2,
+       dis_d_total,
+       connect)
+stridy$perwell_b2 <- as.numeric(stridy$perwellb_2)
+stridy$chr_gen_2 <- as.numeric(stridy$chr_gen_2)
+stridy$sexori <- as.factor(stridy$sexori)
+stridy$gender <- as.factor(stridy$gender)
+stridy$ethnic <- as.factor(stridy$ethnic)
 head(stridy)
+
+
+
 
 ```
 
@@ -126,9 +132,17 @@ stridy_long <- stridy_wide %>%
                values_to = "Connectedness")
                
 
+#CODEREVIEW_df: this is both a clever and necessary chunk for the final assignment. I like how you pivoted long, then wide
+# to break data down by ethnicity!
+
 ```
 
 ```{r mean plot, results="asis"}
+#CODEREVIEW_df: I found this code chunk to be quite elegant in piping your stridy data to a grouped subsample of the dataset
+# and then using labs() to make an aesthetically pleasing figure. One idea - have you considered adding error bars? I think
+# it adds a bit of value to the reader understanding the variance around central tendency data. I provided a couple of lines
+# of code to show what I'm thinking.
+
 sexori <- stridy %>% 
   mutate(sexori = as.factor(sexori))
 
@@ -138,16 +152,23 @@ mean_plot <- stridy %>%
   summarize(mean_disc = mean(dis_d_total)) %>% 
   ggplot(aes(sexori, mean_disc)) +
   geom_col(fill = "plum4", alpha = .75) +
+  #this next line of code adds a 1SD error bar on either side of the averages per sexual orientation. In my mind, it adds a 
+  #bit of confidence that means are meaningfully different (e.g., Queer vs. Other - LGB)
+  geom_errorbar(aes(ymin = mean_disc-sd(mean_disc), ymax = mean_disc+sd(mean_disc), width = 0.2)) +
+  
   labs(title = "Experiences of Everyday Discrimination",
        subtitle = "According to Sexual Orientation") +
   xlab("Sexual Orientation") +
   ylab("Average Discriminatory Experiences")
 plot(mean_plot)
+
 ```
 
 
 
 ```{r summary table, results= "asis"}
+
+#CODEREVIEW_df: Really interesting code here; I hadn't seen the syntax "= ~" before quite like how it's setup here. Nice!
 options(qwraps2_markup = "markdown")
 summary1 <-
   list("Everyday Discrmination" =
@@ -174,6 +195,7 @@ summary1 <-
 table_total <- summary_table(stridy, summary1)
 table_total
 
+#CODEREVIEW_df: another learning point - hadn't seen something quite like mutate_at() with characterizing. It leads to a well constructed table!
 grouped_table <- summary_table(stridy%>%
                                  mutate_at('sexori', characterize),
                                summaries = summary1, by = c("sexori"))
@@ -196,6 +218,8 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 
 # Results  
 ``` {r regression}
+
+#CODEREVIEW_df: this is a really useful example of plotting a regression. Hadn't seen ggPredict before - neat!
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
@@ -206,7 +230,7 @@ ggplot(stridy, aes(x = perwellb_2, y = dis_d_total)) +
 ```
 ```{r correlation panels}
 
-
+#CODEREVIEW_df: Also an elegant little section of code to plot some visualizations. It is a little difficult for me to track what exactly I'm looking at here; though, this will almost certainly come with your explanation when you put together your final project. Clearly, your code is there and I'm really interested to know more about the figure(s) that I'm looking at!
 pairs.panels(stridy[,-c(1:4, 9)], 
              method = "pearson", 
              hist.col = "darkmagenta",
