@@ -85,7 +85,7 @@ head(stride)
 stridy <- stride %>%
   drop_na(perwellb_2, dis_d_total, chr_gen_2, connect) %>% 
   filter(sexori <= 6) %>% 
-    select(sexori,
+    select(sexori,   #suggestion - I have often noticed that dplyr seems to have issues when loaded with tidyverse, I would recommend mentioning dplyr::select()
            age,
            ethnic,
            gender,
@@ -93,12 +93,16 @@ stridy <- stride %>%
            perwellb_2,
            dis_d_total,
            connect) 
-stridy$perwell_b2 <- as.numeric(stridy$perwellb_2) 
+stridy$perwell_b2 <- as.numeric(stridy$perwellb_2) #I have found mutate() very useful for conversions of variable class, but this certainly works
 stridy$chr_gen_2 <- as.numeric(stridy$chr_gen_2) 
 stridy$sexori <- as.factor(stridy$sexori) 
 stridy$gender <- as.factor(stridy$gender) 
 stridy$ethnic <- as.factor(stridy$ethnic) 
 head(stridy)
+
+#Adding the suggested code here
+stridy %>% 
+  mutate()
 
 ```
 
@@ -109,6 +113,7 @@ head(stridy)
       #   `Black/African-American,` = "Black/African American",
         # `White,` = "White"))
 
+#Awesome use of pivot_wider()
 stridy_wide <-stridy %>%
   group_by(sexori, ethnic) %>%
   characterize() %>%
@@ -126,6 +131,7 @@ stridy_long <- stridy_wide %>%
 
 ```
 
+<!-- This is a really nice plot. Suggestions - theme_apa(), may be naming the categories on the x axis using recode() -->
 ```{r mean plot, results="asis"}
 sexori <- stridy %>% 
   mutate(sexori = as.factor(sexori))
@@ -139,12 +145,12 @@ mean_plot <- stridy %>%
   labs(title = "Experiences of Everyday Discrimination",
        subtitle = "According to Sexual Orientation") +
   xlab("Sexual Orientation") +
-  ylab("Average Discriminatory Experiences")
+  ylab("Average Discriminatory Experiences") #suggestion - I have often used labs(x = " ", y = " "), but this wors as well!
 plot(mean_plot)
 ```
 
 
-
+<!-- This is awesome code. Really like how everything is listed and the used in the table -->
 ```{r summary table, results= "asis"}
 options(qwraps2_markup = "markdown")
 summary1 <-
@@ -169,7 +175,7 @@ summary1 <-
               "max"       = ~ round(max(connect, na.rm = TRUE),2),
               "mean (sd)" = ~ qwraps2::mean_sd(connect, na_rm = TRUE))
   )
-table_total <- summary_table(stridy, summary1)
+table_total <- summary_table(stridy, summary1) #very cool function! I am certainly going to use this. I used apa_table() for the APA format
 table_total
 
 grouped_table <- summary_table(stridy%>%
@@ -177,6 +183,7 @@ grouped_table <- summary_table(stridy%>%
                                summaries = summary1, by = c("sexori"))
 grouped_table
 ```
+
 
 # Introduction
 # Methods
@@ -199,12 +206,12 @@ summary(lm.beta(mod))
 
 fit=lm(perwellb_2 ~ dis_d_total*chr_gen_2*connect, data=stridy)
 summary(fit)
-ggPredict(fit,interactive = TRUE)
+ggPredict(fit,interactive = TRUE) #very cool function! I am wondering if there is a way to rename the labs, that would be super helpful!
 ```
+
 ```{r correlation panels}
 
-
-pairs.panels(stridy[,-c(1:4, 9)], 
+pairs.panels(stridy[,-c(1:4, 9)], #very very cool!
              method = "pearson", 
              hist.col = "darkmagenta",
              density = FALSE,
@@ -214,6 +221,8 @@ pairs.panels(stridy[,-c(1:4, 9)],
              )
 
 ```
+<!-- - At least one thing you learned from reviewing their script -->
+<!-- I learned that I could make a summary table by listing descriptives, this can be very useful for large number of variables probably with the map function. summary_table() and pairs.panels are functions I am certainly borrowing for my future work-->
 
 # Discussion
 
