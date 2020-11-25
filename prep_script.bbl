@@ -52,6 +52,34 @@
       \verb https://github.com/crsh/papaja
       \endverb
     \endentry
+    \entry{R-lm.beta}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=0c89c710ae7291331c6658e319a91d5b}{%
+           family={Behrendt},
+           familyi={B\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c89c710ae7291331c6658e319a91d5b}
+      \strng{fullhash}{0c89c710ae7291331c6658e319a91d5b}
+      \strng{bibnamehash}{0c89c710ae7291331c6658e319a91d5b}
+      \strng{authorbibnamehash}{0c89c710ae7291331c6658e319a91d5b}
+      \strng{authornamehash}{0c89c710ae7291331c6658e319a91d5b}
+      \strng{authorfullhash}{0c89c710ae7291331c6658e319a91d5b}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 1.5-1}
+      \field{title}{lm.beta: Add Standardized Regression Coefficients to lm-Objects}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=lm.beta
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=lm.beta
+      \endverb
+    \endentry
     \entry{R-rio}{manual}{}
       \name{author}{4}{}{%
         {{hash=82ee03ed80f2b32c4911591e6d70d7fa}{%
@@ -145,6 +173,49 @@
       \verb https://CRAN.R-project.org/package=janitor
       \endverb
     \endentry
+    \entry{R-gdtools}{manual}{}
+      \name{author}{4}{}{%
+        {{hash=bfc72b3bf3f62492c915aad43cf635de}{%
+           family={Gohel},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
+           family={Wickham},
+           familyi={W\bibinitperiod},
+           given={Hadley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4caae9be043b32573c94b11203a4a2fe}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Lionel},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0f4f7df4d18c1270721b575fc1288184}{%
+           family={Ooms},
+           familyi={O\bibinitperiod},
+           given={Jeroen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{79aceb8de4eabcc3ebdb347695ec080f}
+      \strng{fullhash}{7ca600277c22865afd6ba02669dcfbdb}
+      \strng{bibnamehash}{79aceb8de4eabcc3ebdb347695ec080f}
+      \strng{authorbibnamehash}{79aceb8de4eabcc3ebdb347695ec080f}
+      \strng{authornamehash}{79aceb8de4eabcc3ebdb347695ec080f}
+      \strng{authorfullhash}{7ca600277c22865afd6ba02669dcfbdb}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 0.2.2}
+      \field{title}{gdtools: Utilities for Graphical Rendering}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=gdtools
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=gdtools
+      \endverb
+    \endentry
     \entry{R-purrr}{manual}{}
       \name{author}{2}{}{%
         {{hash=4caae9be043b32573c94b11203a4a2fe}{%
@@ -176,6 +247,90 @@
       \endverb
       \verb{url}
       \verb https://CRAN.R-project.org/package=purrr
+      \endverb
+    \endentry
+    \entry{R-rockchalk}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=80810c4c8a4a4619b77a7b42cb64f414}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Paul\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \strng{fullhash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \strng{bibnamehash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \strng{authorbibnamehash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \strng{authornamehash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \strng{authorfullhash}{80810c4c8a4a4619b77a7b42cb64f414}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 1.8.144}
+      \field{title}{rockchalk: Regression Estimation and Presentation}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=rockchalk
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=rockchalk
+      \endverb
+    \endentry
+    \entry{R-lavaanPlot}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=8f4283200b77decbd21bcf41d272ab6f}{%
+           family={Lishinski},
+           familyi={L\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f4283200b77decbd21bcf41d272ab6f}
+      \strng{fullhash}{8f4283200b77decbd21bcf41d272ab6f}
+      \strng{bibnamehash}{8f4283200b77decbd21bcf41d272ab6f}
+      \strng{authorbibnamehash}{8f4283200b77decbd21bcf41d272ab6f}
+      \strng{authornamehash}{8f4283200b77decbd21bcf41d272ab6f}
+      \strng{authorfullhash}{8f4283200b77decbd21bcf41d272ab6f}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 0.5.1}
+      \field{title}{lavaanPlot: Path Diagrams for Lavaan Models via DiagrammeR}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=lavaanPlot
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=lavaanPlot
+      \endverb
+    \endentry
+    \entry{R-ggiraphExtra}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=bda6f4b4a174fe7ec1ca4f6f573b8a7e}{%
+           family={Moon},
+           familyi={M\bibinitperiod},
+           given={Keon-Woong},
+           giveni={K\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \strng{fullhash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \strng{bibnamehash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \strng{authorbibnamehash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \strng{authornamehash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \strng{authorfullhash}{bda6f4b4a174fe7ec1ca4f6f573b8a7e}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 0.3.0}
+      \field{title}{ggiraphExtra: Make Interactive 'ggplot2'. Extension to 'ggplot2' and 'ggiraph'}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=ggiraphExtra
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=ggiraphExtra
       \endverb
     \endentry
     \entry{R-tibble}{manual}{}
@@ -242,6 +397,72 @@
       \verb https://www.R-project.org/
       \endverb
     \endentry
+    \entry{R-psych}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=89652dabff9fba314f4f86dea2c8f15d}{%
+           family={Revelle},
+           familyi={R\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Evanston, Illinois}%
+      }
+      \list{organization}{1}{%
+        {Northwestern University}%
+      }
+      \strng{namehash}{89652dabff9fba314f4f86dea2c8f15d}
+      \strng{fullhash}{89652dabff9fba314f4f86dea2c8f15d}
+      \strng{bibnamehash}{89652dabff9fba314f4f86dea2c8f15d}
+      \strng{authorbibnamehash}{89652dabff9fba314f4f86dea2c8f15d}
+      \strng{authornamehash}{89652dabff9fba314f4f86dea2c8f15d}
+      \strng{authorfullhash}{89652dabff9fba314f4f86dea2c8f15d}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 2.0.9}
+      \field{title}{psych: Procedures for Psychological, Psychometric, and Personality Research}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=psych
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=psych
+      \endverb
+    \endentry
+    \entry{R-lavaan}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9a34053cb630f7c9a175d78ae0b43d43}{%
+           family={Rosseel},
+           familyi={R\bibinitperiod},
+           given={Yves},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \strng{fullhash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \strng{bibnamehash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \strng{authorbibnamehash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \strng{authornamehash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \strng{authorfullhash}{9a34053cb630f7c9a175d78ae0b43d43}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{number}{2}
+      \field{title}{{lavaan}: An {R} Package for Structural Equation Modeling}
+      \field{volume}{48}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 36}
+      \range{pages}{36}
+      \verb{urlraw}
+      \verb http://www.jstatsoft.org/v48/i02/
+      \endverb
+      \verb{url}
+      \verb http://www.jstatsoft.org/v48/i02/
+      \endverb
+    \endentry
     \entry{R-apaTables}{manual}{}
       \name{author}{1}{}{%
         {{hash=8c4ca07c26513d88fd190a33900e820c}{%
@@ -268,6 +489,34 @@
       \endverb
       \verb{url}
       \verb https://CRAN.R-project.org/package=apaTables
+      \endverb
+    \endentry
+    \entry{R-probemod}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=24b8614533564fe0bed0a3acf71d1e72}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Jiat\bibnamedelima Chow},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b8614533564fe0bed0a3acf71d1e72}
+      \strng{fullhash}{24b8614533564fe0bed0a3acf71d1e72}
+      \strng{bibnamehash}{24b8614533564fe0bed0a3acf71d1e72}
+      \strng{authorbibnamehash}{24b8614533564fe0bed0a3acf71d1e72}
+      \strng{authornamehash}{24b8614533564fe0bed0a3acf71d1e72}
+      \strng{authorfullhash}{24b8614533564fe0bed0a3acf71d1e72}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 0.2.1}
+      \field{title}{probemod: Statistical Tools for Probing Moderation Effects}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=probemod
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=probemod
       \endverb
     \endentry
     \entry{R-forcats}{manual}{}
@@ -651,6 +900,42 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.21105/joss.01686
+      \endverb
+    \endentry
+    \entry{R-knitr}{book}{}
+      \name{author}{1}{}{%
+        {{hash=25ce25b9d444076e0963bcf9fa3a6f92}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Yihui},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton, Florida}%
+      }
+      \list{publisher}{2}{%
+        {Chapman}%
+        {Hall/CRC}%
+      }
+      \strng{namehash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \strng{fullhash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \strng{bibnamehash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \strng{authorbibnamehash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \strng{authornamehash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \strng{authorfullhash}{25ce25b9d444076e0963bcf9fa3a6f92}
+      \field{sortinit}{X}
+      \field{sortinithash}{e90038f30fa4b9ce59606fc8347e3cc7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{note}{ISBN 978-1498716963}
+      \field{title}{Dynamic Documents with {R} and knitr}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://yihui.org/knitr/
+      \endverb
+      \verb{url}
+      \verb https://yihui.org/knitr/
       \endverb
     \endentry
   \enddatalist

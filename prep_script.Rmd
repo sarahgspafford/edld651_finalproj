@@ -1,13 +1,13 @@
 ---
-title             : "EDLD651 Final Project"
-shorttitle        : "Title"
+title             : "EDLD651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals in Marginalized Sexual Orientation Groups"
+shorttitle        : "EDLD651 Final Project"
 
 author: 
   - name          : "Maggie Head"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
     address       : "Postal address"
-    email         : "my@email.com"
+    email         : "mhead@uoregon.edu"
     role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
       - Conceptualization
       - Writing - Original Draft Preparation
@@ -52,6 +52,7 @@ classoption       : "man"
 output:
   papaja::apa6_pdf:
     citation_package: biblatex
+    always_allow_html: true
 ---
 
 ```{r libraries}
@@ -68,6 +69,7 @@ library(ggiraphExtra)
 library(psych)
 library(lavaan)
 library(lavaanPlot)
+library(magick)
 ```
 
 ```{r setup}
@@ -77,6 +79,24 @@ knitr::opts_chunk$set(echo = FALSE,
                      eval=TRUE
                      )
 ```
+# Introduction
+# Methods
+
+
+## Participants
+
+## Material
+
+## Procedure
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+# Results
+## Preliminary Analyses
+
+
+
 
 ```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
@@ -180,22 +200,9 @@ grouped_table <- summary_table(stridy%>%
 grouped_table
 ```
 
-# Introduction
-# Methods
-
-
-## Participants
-
-## Material
-
-## Procedure
-
-## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
-
-
-# Results  
-``` {r regression}
+## Primary Analyses
+ 
+``` {r regression, include = FALSE}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
@@ -204,8 +211,9 @@ ggplot(stridy, aes(x = perwellb_2, y = dis_d_total)) +
    geom_smooth(method = "lm") +
    theme_minimal()
 ```
-```{r correlation panels}
+```{r correlation panels, results="asis"}
 
+labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 
 pairs.panels(stridy[,-c(1:4, 9)], 
              method = "pearson", 
@@ -213,18 +221,16 @@ pairs.panels(stridy[,-c(1:4, 9)],
              density = FALSE,
              ellipses = FALSE,
              lm = TRUE, 
-             labels 
+             labels = labels
              )
 
 ```
-```{r lavaan plot}
+```{r lavaan plot, include = false}
 
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
 fit <- sem(model, data = stridy)
 summary(fit)
-
-labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
