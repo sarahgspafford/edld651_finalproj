@@ -1,5 +1,5 @@
 ---
-title             : "EDLD651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals in Marginalized Sexual Orientation Groups"
+title             : "EDLD651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals With Marginalized Sexual Orientations"
 shorttitle        : "EDLD651 Final Project"
 
 author: 
@@ -149,9 +149,6 @@ stridy_long <- stridy_wide %>%
 ```
 
 ```{r mean plot, results="asis"}
-sexori <- stridy %>% 
-  mutate(sexori = as.factor(sexori))
-
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
   characterize() %>% 
