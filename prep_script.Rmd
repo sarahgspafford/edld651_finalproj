@@ -101,7 +101,7 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 ```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
   as_tibble() %>% 
-  janitor::clean_names() 
+  janitor::clean_names()
 head(stride)
 
 stridy <- stride %>%
@@ -114,22 +114,27 @@ stridy <- stride %>%
            chr_gen_2,
            perwellb_2,
            dis_d_total,
-           connect) 
-stridy$perwell_b2 <- as.numeric(stridy$perwellb_2) 
-stridy$chr_gen_2 <- as.numeric(stridy$chr_gen_2) 
-stridy$sexori <- as.factor(stridy$sexori) 
-stridy$gender <- as.factor(stridy$gender) 
-stridy$ethnic <- as.factor(stridy$ethnic) 
-head(stridy)
-
+           connect) %>%
+  mutate(perwellb_2 = as.numeric(perwellb_2),
+         chr_gen_2 = as.numeric(chr_gen_2),
+         sexori = as.factor(sexori),
+         gender = as.factor(gender),
+         ethnic = as.factor(ethnic),
+        ethnic = fct_recode(ethnic,
+    "White" = "0",
+    "Black/African-American" = "1",
+    "Latino/Hispanic" = "2"), 
+         sexori = fct_recode(sexori,
+    "Gay" = "1",
+    "Lesbian" = "2",
+    "Queer" = "3",
+    "Bisexual" = "4",
+    "Homosexual" = "5",
+    "Other - LGB" = "6"))
 ```
 
 ```{r tidy data, include = FALSE}
 
-#stridy %>%
-#  mutate(ethnic = recode(ethnic,
-      #   `Black/African-American,` = "Black/African American",
-        # `White,` = "White"))
 
 stridy_wide <-stridy %>%
   group_by(sexori, ethnic) %>%
@@ -151,7 +156,6 @@ stridy_long <- stridy_wide %>%
 ```{r mean plot, results="asis"}
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
-  characterize() %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
   ggplot(aes(sexori, mean_disc)) +
   geom_col(fill = "plum4", alpha = .75) +
@@ -206,13 +210,15 @@ summary(lm.beta(mod))
 ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
    geom_smooth(method = "lm") +
-   theme_minimal()
+  labs(x = "Discrimination", y = "Pychological Wellbeing") +
+  theme(text=element_text(size=12,  family="serif"))
+  
+
 ```
 ```{r correlation panels, results="asis"}
-
 labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 
-pairs.panels(stridy[,-c(1:4, 9)], 
+pairs.panels(stridy[,-c(1:4)], 
              method = "pearson", 
              hist.col = "darkmagenta",
              density = FALSE,
@@ -222,7 +228,7 @@ pairs.panels(stridy[,-c(1:4, 9)],
              )
 
 ```
-```{r lavaan plot, include = false}
+```{r lavaan plot }
 
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
