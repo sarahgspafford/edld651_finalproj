@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.1)  16 NOV 2020 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.1)  25 NOV 2020 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,40 +973,71 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 .map}
 
 ] [2]
-<prep_script_files/figure-latex/mean plot-1.pdf, id=55, 463.7325pt x 316.18124p
+<prep_script_files/figure-latex/mean plot-1.pdf, id=89, 463.7325pt x 316.18124p
 t>
 File: prep_script_files/figure-latex/mean plot-1.pdf Graphic file (type pdf)
 <use prep_script_files/figure-latex/mean plot-1.pdf>
 Package pdftex.def Info: prep_script_files/figure-latex/mean plot-1.pdf  used o
-n input line 191.
+n input line 217.
 (pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
 
-Overfull \hbox (22.89095pt too wide) in paragraph at lines 191--192
+Overfull \hbox (22.89095pt too wide) in paragraph at lines 217--218
 [][]  
  []
 
+
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+[3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-02.
+28.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3 <./prep_script_files/figure-latex/mean plot-1.pdf>]
-Overfull \hbox (15.09674pt too wide) in paragraph at lines 230--231
+) [4 <./prep_script_files/figure-latex/mean plot-1.pdf>]
+Overfull \hbox (10.40178pt too wide) in paragraph at lines 260--261
 []\T1/lmr/m/n/12 Homosexual 
  []
 
 
-Overfull \hbox (13.09407pt too wide) in paragraph at lines 391--392
+Overfull \hbox (3.69696pt too wide) in paragraph at lines 417--418
 []\T1/lmr/bx/n/12 Psychological 
  []
 
-[4]
+[5]
+<prep_script_files/figure-latex/correlation panels-1.pdf, id=150, 419.5675pt x 
+275.0275pt>
+File: prep_script_files/figure-latex/correlation panels-1.pdf Graphic file (typ
+e pdf)
+<use prep_script_files/figure-latex/correlation panels-1.pdf>
+Package pdftex.def Info: prep_script_files/figure-latex/correlation panels-1.pd
+f  used on input line 572.
+(pdftex.def)             Requested size: 419.56647pt x 275.02682pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[5] [6] [7] [8
+[6]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+74.
+(/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [7 <./prep_script_files/figure-latex/correlation panels-1.pdf>]
+<prep_script_files/figure-latex/lavaan plot-1.pdf, id=170, 947.54pt x 319.1925p
+t>
+File: prep_script_files/figure-latex/lavaan plot-1.pdf Graphic file (type pdf)
+<use prep_script_files/figure-latex/lavaan plot-1.pdf>
+Package pdftex.def Info: prep_script_files/figure-latex/lavaan plot-1.pdf  used
+ on input line 606.
+(pdftex.def)             Requested size: 469.74944pt x 158.24185pt.
 
-] AED endfloat: Processing end Figures and Tables [9] (./prep_script.aux)
+Overfull \hbox (28.90196pt too wide) in paragraph at lines 606--607
+[][]  
+ []
+
+[8 <./prep_script_files/figure-latex/lavaan plot-1.pdf>] [9] [10
+
+] [11] AED endfloat: Processing end Figures and Tables [12] (./prep_script.aux)
 Package rerunfilecheck Info: File `prep_script.out' has not changed.
-(rerunfilecheck)             Checksum: DC2B8D6883B7392E7593F476A92F25F1;881.
+(rerunfilecheck)             Checksum: BCBF5D23BD6C05F755662AEE4440A9D6;1179.
 
 LaTeX Warning: There were undefined references.
 
@@ -1021,14 +1052,14 @@ Package logreq Info: Writing requests to 'prep_script.run.xml'.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 574 (\begingroup)
+### semi simple group (level 1) entered at line 616 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21827 strings out of 481433
- 360895 string characters out of 5919257
- 1111472 words of memory out of 5000000
- 38192 multiletter control sequences out of 15000+600000
- 581477 words of font info for 66 fonts, out of 8000000 for 9000
+ 21918 strings out of 481433
+ 363269 string characters out of 5919257
+ 1112974 words of memory out of 5000000
+ 38261 multiletter control sequences out of 15000+600000
+ 581795 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  80i,11n,85p,2250b,1741s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/l
@@ -1039,11 +1070,12 @@ csc10.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
 mr12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
 r8.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri
 12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss
-8.pfb>
-Output written on prep_script.pdf (9 pages, 149470 bytes).
+8.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt1
+2.pfb>
+Output written on prep_script.pdf (12 pages, 253223 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 
