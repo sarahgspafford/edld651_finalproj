@@ -206,7 +206,7 @@ grouped_table
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
-ggplot(stridy, aes(x = perwellb_2, y = dis_d_total)) +
+ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
    geom_smooth(method = "lm") +
    theme_minimal()
