@@ -216,7 +216,7 @@ ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
 
 ```
 ```{r correlation panels, results="asis"}
-labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
+cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
 pairs.panels(stridy[,-c(1:4)], 
              method = "pearson", 
@@ -224,8 +224,10 @@ pairs.panels(stridy[,-c(1:4)],
              density = FALSE,
              ellipses = FALSE,
              lm = TRUE, 
-             labels = labels
-             )
+             labels = cor_labels)
+
+cor.mat <- cor(stridy[,-c(1:4)], use = 'pairwise.complete.obs')
+round(cor.mat,3)
 
 ```
 ```{r lavaan plot }
@@ -234,6 +236,8 @@ model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
 fit <- sem(model, data = stridy)
 summary(fit)
+
+labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
