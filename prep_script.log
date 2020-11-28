@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.1)  25 NOV 2020 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.27)  27 NOV 2020 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,24 +817,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./prep_script.aux)
 \openout1 = `prep_script.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -893,7 +893,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 188.
+Package hyperref Info: Link coloring OFF on input line 184.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -905,9 +905,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count439
 )
-LaTeX Info: Redefining \ref on input line 188.
-LaTeX Info: Redefining \pageref on input line 188.
-LaTeX Info: Redefining \nameref on input line 188.
+LaTeX Info: Redefining \ref on input line 184.
+LaTeX Info: Redefining \pageref on input line 184.
+LaTeX Info: Redefining \nameref on input line 184.
 (./prep_script.out) (./prep_script.out)
 \@outlinefile=\write6
 \openout6 = `prep_script.out'.
@@ -926,116 +926,135 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'prep_script.bbl' found.
-(./prep_script.bbl)
-Package biblatex Info: Reference section=0 on input line 188.
-Package biblatex Info: Reference segment=0 on input line 188.
+(./prep_script.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                projectstride
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 184.
+Package biblatex Info: Reference segment=0 on input line 184.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-90.
+86.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-90.
+86.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-90.
+86.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-190.
+186.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-190.
+186.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 190.
+(Font)              <12> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 190.
+(Font)              <8> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 190.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 190
+(Font)              <6> on input line 186.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 186
 .
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 190
+LaTeX Font Info:    Trying to load font information for U+msb on input line 186
 .
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/Users/maggiehead/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
 .map}
 
-] [2]
-<prep_script_files/figure-latex/mean plot-1.pdf, id=89, 463.7325pt x 316.18124p
-t>
+] [2] [3] [4]
+<prep_script_files/figure-latex/mean plot-1.pdf, id=128, 459.7175pt x 312.16624
+pt>
 File: prep_script_files/figure-latex/mean plot-1.pdf Graphic file (type pdf)
 <use prep_script_files/figure-latex/mean plot-1.pdf>
 Package pdftex.def Info: prep_script_files/figure-latex/mean plot-1.pdf  used o
-n input line 217.
-(pdftex.def)             Requested size: 463.73842pt x 316.18529pt.
+n input line 218.
+(pdftex.def)             Requested size: 459.72337pt x 312.17024pt.
 
-Overfull \hbox (22.89095pt too wide) in paragraph at lines 217--218
+Overfull \hbox (18.8759pt too wide) in paragraph at lines 218--219
 [][]  
  []
 
-
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
-[3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-28.
+29.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4 <./prep_script_files/figure-latex/mean plot-1.pdf>]
-Overfull \hbox (10.40178pt too wide) in paragraph at lines 260--261
+) [5 <./prep_script_files/figure-latex/mean plot-1.pdf>]
+Overfull \hbox (10.40178pt too wide) in paragraph at lines 261--262
 []\T1/lmr/m/n/12 Homosexual 
  []
 
 
-Overfull \hbox (3.69696pt too wide) in paragraph at lines 417--418
+Overfull \hbox (3.69696pt too wide) in paragraph at lines 418--419
 []\T1/lmr/bx/n/12 Psychological 
  []
 
-[5]
-<prep_script_files/figure-latex/correlation panels-1.pdf, id=150, 419.5675pt x 
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[7] [8]
+<prep_script_files/figure-latex/regression-1.pdf, id=171, 464.73625pt x 313.17p
+t>
+File: prep_script_files/figure-latex/regression-1.pdf Graphic file (type pdf)
+<use prep_script_files/figure-latex/regression-1.pdf>
+Package pdftex.def Info: prep_script_files/figure-latex/regression-1.pdf  used 
+on input line 607.
+(pdftex.def)             Requested size: 464.74928pt x 313.17877pt.
+
+Overfull \hbox (23.90181pt too wide) in paragraph at lines 607--608
+[][]  
+ []
+
+<prep_script_files/figure-latex/correlation panels-1.pdf, id=172, 419.5675pt x 
 275.0275pt>
 File: prep_script_files/figure-latex/correlation panels-1.pdf Graphic file (typ
 e pdf)
 <use prep_script_files/figure-latex/correlation panels-1.pdf>
 Package pdftex.def Info: prep_script_files/figure-latex/correlation panels-1.pd
-f  used on input line 572.
+f  used on input line 609.
 (pdftex.def)             Requested size: 419.56647pt x 275.02682pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[6]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-74.
+[9 <./prep_script_files/figure-latex/regression-1.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+15.
 (/Users/maggiehead/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7 <./prep_script_files/figure-latex/correlation panels-1.pdf>]
-<prep_script_files/figure-latex/lavaan plot-1.pdf, id=170, 947.54pt x 319.1925p
+) [10 <./prep_script_files/figure-latex/correlation panels-1.pdf>]
+<prep_script_files/figure-latex/lavaan plot-1.pdf, id=199, 947.54pt x 319.1925p
 t>
 File: prep_script_files/figure-latex/lavaan plot-1.pdf Graphic file (type pdf)
 <use prep_script_files/figure-latex/lavaan plot-1.pdf>
 Package pdftex.def Info: prep_script_files/figure-latex/lavaan plot-1.pdf  used
- on input line 606.
+ on input line 647.
 (pdftex.def)             Requested size: 469.74944pt x 158.24185pt.
 
-Overfull \hbox (28.90196pt too wide) in paragraph at lines 606--607
+Overfull \hbox (28.90196pt too wide) in paragraph at lines 647--648
 [][]  
  []
 
-[8 <./prep_script_files/figure-latex/lavaan plot-1.pdf>] [9] [10
+[11 <./prep_script_files/figure-latex/lavaan plot-1.pdf>] [12] [13
 
-] [11] AED endfloat: Processing end Figures and Tables [12] (./prep_script.aux)
+] [14] AED endfloat: Processing end Figures and Tables [15] (./prep_script.aux)
 Package rerunfilecheck Info: File `prep_script.out' has not changed.
 (rerunfilecheck)             Checksum: BCBF5D23BD6C05F755662AEE4440A9D6;1179.
 
@@ -1052,30 +1071,36 @@ Package logreq Info: Writing requests to 'prep_script.run.xml'.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 616 (\begingroup)
+### semi simple group (level 1) entered at line 657 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21918 strings out of 481433
- 363269 string characters out of 5919257
- 1112974 words of memory out of 5000000
- 38261 multiletter control sequences out of 15000+600000
- 581795 words of font info for 67 fonts, out of 8000000 for 9000
+ 21930 strings out of 481433
+ 363619 string characters out of 5919256
+ 1114145 words of memory out of 5000000
+ 38268 multiletter control sequences out of 15000+600000
+ 586066 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  80i,11n,85p,2250b,1741s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/l
 m/lm-ec.enc}{/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm
--ts1.enc}</Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-bx12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-csc10.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
-mr12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lm
-r8.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri
-12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss
-8.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt1
-2.pfb>
-Output written on prep_script.pdf (12 pages, 253223 bytes).
+-mathsy.enc}{/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm
+-rm.enc}{/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}{/Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1
+.enc}</Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12
+.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi1
+0.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmcsc
+10.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi
+12.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr1
+2.pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.
+pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.
+pfb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.p
+fb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.p
+fb></Users/maggiehead/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.p
+fb>
+Output written on prep_script.pdf (15 pages, 310256 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 241 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

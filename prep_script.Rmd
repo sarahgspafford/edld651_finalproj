@@ -63,6 +63,7 @@ library(psych)
 library(lavaan)
 library(lavaanPlot)
 library(magick)
+library(apaTables)
 ```
 
 ```{r setup}
@@ -199,9 +200,16 @@ grouped_table
 
 ## Primary Analyses
 
-```{r regression, include = FALSE}
+  A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences was negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$.
+  
+  
+
+```{r regression, results="asis"}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
+
+apa.aov.table(mod)
+
 
 ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
@@ -227,6 +235,7 @@ cor.mat <- cor(stridy[,-c(1:4)], use = 'pairwise.complete.obs')
 round(cor.mat,3)
 
 ```
+
 
 ```{r lavaan plot }
 
