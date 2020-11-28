@@ -305,6 +305,43 @@
       \verb https://CRAN.R-project.org/package=lavaanPlot
       \endverb
     \endentry
+    \entry{projectstride}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1ef1d967ab9396dc00e290a36d10aebb}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Ilan\bibnamedelima H},
+           giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=9d0bb6dad2a60d95497adeeff857f95e}{%
+           family={Frost},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=4e01ebdb8645fc29c1b0059ba02ab46a}{%
+           family={Narvaez},
+           familyi={N\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1c48396b3a0a7d40d68f37610b2e746b}{%
+           family={Dietrich},
+           familyi={D\bibinitperiod},
+           given={Jessica\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a1ddc89e05698c66e3f964b0e638d3e}
+      \strng{fullhash}{a76aa3c4873952c72286cdd71e0eb9d0}
+      \strng{bibnamehash}{8a1ddc89e05698c66e3f964b0e638d3e}
+      \strng{authorbibnamehash}{8a1ddc89e05698c66e3f964b0e638d3e}
+      \strng{authornamehash}{8a1ddc89e05698c66e3f964b0e638d3e}
+      \strng{authorfullhash}{a76aa3c4873952c72286cdd71e0eb9d0}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Unpublished manuscript}
+      \field{title}{Project Stride methodology and technical notes}
+      \field{year}{2006}
+    \endentry
     \entry{R-ggiraphExtra}{manual}{}
       \name{author}{1}{}{%
         {{hash=bda6f4b4a174fe7ec1ca4f6f573b8a7e}{%
