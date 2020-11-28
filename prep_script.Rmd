@@ -20,7 +20,7 @@ affiliation:
     institution   : "University of Oregon"
 
 authornote: |
-  Data for this project was taken from Project STRIDE: Stress, Identity and Mental Health. (Meyer, Ilan H., Dohrenwend, Bruce Philip, Schwartz, Sharon, Hunter, Joyce, and Kertzner, Robert M. Project STRIDE: Stress, Identity, and Mental Health, New York City, 2004-2005. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2018-11-28. https://doi.org/10.3886/ICPSR35525.v2)
+  This study utilized data from Project STRIDE: Stress, Identity and Mental Health, which was funded by the National Institutes of Health/National Institute of Mental Health (Grant#: 5R01MH066058-03).
 
 abstract: |
   This will be an abstract.
@@ -36,7 +36,7 @@ floatsintext      : yes
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : yes
+linenumbers       : no
 mask              : no
 draft             : no
 
@@ -61,6 +61,7 @@ library(lavaan)
 library(lavaanPlot)
 library(magick)
 library(apaTables)
+library(knitr)
 ```
 
 ```{r setup}
@@ -71,29 +72,6 @@ knitr::opts_chunk$set(echo = FALSE,
                      )
 ```
 
-# Introduction
-Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see Thotis, 2010, for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green & Feinstein, 2012), eating disorders (Parker & Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
-  
-Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim & Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
-
-# Methods
-## Participants
-Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. Case quota sampling methods were used in order to obtain a sample with adequate representation based on age group, sexual orientation, gender, and race/ethnicity [@projectstride]. Participants
-
-## Measures
-Discriminatory experiences 
-Chronic strain
-Social connectedness
-Psychological wellbeing
-## Procedure
-
-## Data analysis
-
-We used `r cite_r("r-references.bib")` for all our analyses.
-
-# Results
-
-## Preliminary Analyses
 ```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
   as_tibble() %>% 
@@ -149,20 +127,24 @@ stridy_long <- stridy_wide %>%
 
 ```
 
-```{r mean plot, results="asis"}
-mean_plot <- stridy %>% 
-  group_by(sexori) %>% 
-  summarize(mean_disc = mean(dis_d_total)) %>% 
-  ggplot(aes(sexori, mean_disc)) +
-  geom_col(fill = "plum4", alpha = .75) +
-  labs(title = "Experiences of Everyday Discrimination",
-       subtitle = "According to Sexual Orientation") +
-  xlab("Sexual Orientation") +
-  ylab("Average Discriminatory Experiences")+
-  theme(text=element_text(size=16,  family="serif"))
-plot(mean_plot)
-```
+# Introduction
+Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see [@thoits2010], for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green & Feinstein, 2012), eating disorders (Parker & Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
+  
+Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim & Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
+```{r means, include=FALSE}
+mean_age <- mean(stridy$age, na.rm = TRUE)
 
+sd_age <- sd(stridy$age, na.rm = TRUE)
+
+tabyl(stridy$sexori, sort = TRUE) %>% 
+  kable()
+```
+# Methods
+## Participants
+This study utilizes data from Project STRIDE: Stress, Identity and Mental Health [@projectstride]. Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. Case quota sampling methods were used in order to obtain a sample with adequate representation based on age group, sexual orientation, gender, and race/ethnicity [@projectstridemethod]. For the present study, a subset of data was utilized that included all participants who self-identified as gay, lesbian, queer, bisexual, homosexual, or "other - LGB" and had valid responses to the psychological wellbeing scale at time point 2, discriminatory experiences at time point 1, chronic strain at time point 2, and social connectedness (_n_ = 360). Participants were aged 18-59 years (_M_ = `r mean_age`, _SD_ = `r sd_age`) and the majority identified as gay (_n_ = 160, 44.4%), lesbian (_n_ = 104, 28.8%), or bisexual (_n_ = 63, 17.5%), while 3.3% identified as queer (_n_ = 12), 4.4% identified as homosexual (_n_ = 16), and 1.4% idenfitied as "other LGB" (_n_ = 5). See Table 1 for additional descriptive statistics. 
+__Table 1.__
+
+_Descriptive statistics for independent and dependent variables_
 ```{r summary table, results= "asis"}
 options(qwraps2_markup = "markdown")
 summary1 <-
@@ -189,13 +171,52 @@ summary1 <-
   )
 table_total <- summary_table(stridy, summary1)
 table_total
+```
+__Table 2.__
 
+_Descriptive statistics of independent and dependent variables by sexual orientation_
+```{r summary table 2, results="asis"}
 grouped_table <- summary_table(stridy%>%
                                  mutate_at('sexori', characterize),
                                summaries = summary1, by = c("sexori"))
 grouped_table
 ```
+## Measures
+### Discriminatory experiences
+The discriminatory experiences measure was adapted from [@williams1997] to include all minority groups (e.g. gender minorities). This scale assessed how often discriminatory experiences (e.g. being treated with less respect, being threatened or harrassed) occurred throughout their lifetimes. Each question was rated on a 4-point scale (1 = _"often"_ through 4 = _"never"_) and coded so that higher scores represented more discriminatory experiences [@projectstridemethod].
+
+### Chronic strain
+Chronic strain was measured u
+
+### Social connectedness
+Social connectedness was contextualized as connectedness to the gay community, as measured by 
+
+### Psychological wellbeing
+Psychological wellbeing was measured 
+
+## Procedure
+For additional details on data collection procedures for Project STRIDE, please see [@projectstridemethod].
+## Data analysis
+
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+# Results
+## Preliminary Analyses
+```{r mean plot, results="asis"}
+mean_plot <- stridy %>% 
+  group_by(sexori) %>% 
+  summarize(mean_disc = mean(dis_d_total)) %>% 
+  ggplot(aes(sexori, mean_disc)) +
+  geom_col(fill = "plum4", alpha = .75) +
+  labs(title = "Experiences of Everyday Discrimination",
+       subtitle = "According to Sexual Orientation") +
+  xlab("Sexual Orientation") +
+  ylab("Average Discriminatory Experiences")+
+  theme(text=element_text(size=16,  family="serif"))
+plot(mean_plot)
+```
 ## Primary Analyses
+
 A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$.
   
   
