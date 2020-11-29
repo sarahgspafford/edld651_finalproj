@@ -196,10 +196,10 @@ Given that morbidity and mortality is intimately tied to social and interpersona
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
-Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino \autocite{projectstride}.
+Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino \autocite{projectstride}. Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures. The final sample comprised 360 individuals (50.2\% female) aged 18-58 years old (\emph{M} = 32.41 years, \emph{SD} = 9.25). Partticiapnts were predominantly White (34\%), followed by Black/African-American (33\%), and Latino/Hispanic (32\%). The distribution of sexual orientations in the study sample can be seen in Table 1.
 
-\hypertarget{material}{%
-\subsection{Material}\label{material}}
+\hypertarget{materials}{%
+\subsection{MaterialS}\label{materials}}
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
@@ -215,35 +215,25 @@ We used R \autocite[Version 4.0.3;][]{R-base} and the R-packages \emph{apaTables
 \hypertarget{preliminary-analyses}{%
 \subsection{Preliminary Analyses}\label{preliminary-analyses}}
 
-\includegraphics{prep_script_files/figure-latex/mean plot-1.pdf}
+\begin{tabular}{l|r}
+\hline
+Sexual Orientation & Count\\
+\hline
+Gay & 160\\
+\hline
+Lesbian & 104\\
+\hline
+Queer & 12\\
+\hline
+Bisexual & 63\\
+\hline
+Homosexual & 16\\
+\hline
+Other - LGB & 5\\
+\hline
+\end{tabular}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-& stridy (N = 360)\tabularnewline
-\midrule
-\endhead
-\textbf{Everyday Discrmination} & ~~\tabularnewline
-~~ min & 0\tabularnewline
-~~ median & 7\tabularnewline
-~~ max & 8\tabularnewline
-~~ mean (sd) & 6.59 ± 1.86\tabularnewline
-\textbf{Chronic Strain} & ~~\tabularnewline
-~~ min & 1\tabularnewline
-~~ median & 1.67\tabularnewline
-~~ max & 3\tabularnewline
-~~ mean (sd) & 1.71 ± 0.55\tabularnewline
-\textbf{Psychological Wellbeing} & ~~\tabularnewline
-~~ min & 3\tabularnewline
-~~ median & 5.56\tabularnewline
-~~ max & 7\tabularnewline
-~~ mean (sd) & 5.47 ± 0.79\tabularnewline
-\textbf{Social Connectedness} & ~~\tabularnewline
-~~ min & 1.38\tabularnewline
-~~ median & 3.38\tabularnewline
-~~ max & 4\tabularnewline
-~~ mean (sd) & 3.29 ± 0.51\tabularnewline
-\bottomrule
-\end{longtable}
+\includegraphics{prep_script_files/figure-latex/mean plot-1.pdf}
 
 \begin{longtable}[]{@{}lllllll@{}}
 \toprule
@@ -570,81 +560,13 @@ Other - LGB (N = 5)\strut
 \hypertarget{primary-analyses}{%
 \subsection{Primary Analyses}\label{primary-analyses}}
 
-A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences was negatively associated with psychological wellbeing, \(\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03\). Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing,\(\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001\). Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing,\(\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001\). Taken together, all three predictors explained approximately 7.7\% of the variance in psychological wellbeing,\(F(3,356)=9.90, p<.001, R^{2}=.077\).
+A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences was negatively associated with psychological wellbeing, \(\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03\). Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, \(\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001\). Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, \(\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001\). Taken together, all three predictors explained approximately 7.7\% of the variance in psychological wellbeing, \(F(3,356)=9.90, p<.001, R^{2}=.077\).
 
-Call:
-lm(formula = perwellb\_2 \textasciitilde{} 1 + dis\_d\_total + chr\_gen\_2 + connect,
-data = stridy)
+\includegraphics{prep_script_files/figure-latex/regplot-1.pdf}
 
-Residuals:
-Min 1Q Median 3Q Max
--2.35394 -0.45205 0.06373 0.59705 1.47574
+\includegraphics{prep_script_files/figure-latex/correlation panels-1.pdf}
 
-Coefficients:
-Estimate Standardized Std. Error t value Pr(\textgreater\textbar t\textbar)\\
-(Intercept) 5.48365 0.00000 0.32914 16.661 \textless{} 2e-16 \textbf{\emph{
-dis\_d\_total -0.04643 -0.10911 0.02167 -2.142 0.032837 }\\
-chr\_gen\_2 -0.28802 -0.19891 0.07375 -3.905 0.000113 }*
-connect 0.23789 0.15251 0.07945 2.994 0.002944 **
----
-Signif. codes: 0 `\emph{\textbf{' 0.001 '}' 0.01 '}' 0.05 `.' 0.1 ' ' 1
-
-Residual standard error: 0.7633 on 356 degrees of freedom
-Multiple R-squared: 0.077, Adjusted R-squared: 0.06922
-F-statistic: 9.9 on 3 and 356 DF, p-value: 2.764e-06
-
-ANOVA results using perwellb\_2 as the dependent variable
-
-Predictor SS df MS F p partial\_eta2 CI\_90\_partial\_eta2
-(Intercept) 161.70 1 161.70 277.58 .000\\
-dis\_d\_total 2.67 1 2.67 4.59 .033 .01 {[}.00, .04{]}
-chr\_gen\_2 8.89 1 8.89 15.25 .000 .04 {[}.01, .08{]}
-connect 5.22 1 5.22 8.97 .003 .02 {[}.00, .06{]}
-Error 207.39 356 0.58
-
-Note: Values in square brackets indicate the bounds of the 90\% confidence interval for partial eta-squared
-
-\includegraphics{prep_script_files/figure-latex/regression-1.pdf}
-
-\includegraphics{prep_script_files/figure-latex/correlation panels-1.pdf} chr\_gen\_2 perwellb\_2 dis\_d\_total connect
-chr\_gen\_2 1.000 -0.203 0.014 -0.019
-perwellb\_2 -0.203 1.000 -0.114 0.158
-dis\_d\_total 0.014 -0.114 1.000 -0.016
-connect -0.019 0.158 -0.016 1.000
-
-\begin{verbatim}
-## lavaan 0.6-7 ended normally after 14 iterations
-## 
-##   Estimator                                         ML
-##   Optimization method                           NLMINB
-##   Number of free parameters                          4
-##                                                       
-##   Number of observations                           360
-##                                                       
-## Model Test User Model:
-##                                                       
-##   Test statistic                                 0.000
-##   Degrees of freedom                                 0
-## 
-## Parameter Estimates:
-## 
-##   Standard errors                             Standard
-##   Information                                 Expected
-##   Information saturated (h1) model          Structured
-## 
-## Regressions:
-##                    Estimate  Std.Err  z-value  P(>|z|)
-##   perwellb_2 ~                                        
-##     dis_d_total      -0.046    0.022   -2.154    0.031
-##     chr_gen_2        -0.288    0.073   -3.927    0.000
-##     connect           0.238    0.079    3.011    0.003
-## 
-## Variances:
-##                    Estimate  Std.Err  z-value  P(>|z|)
-##    .perwellb_2        0.576    0.043   13.416    0.000
-\end{verbatim}
-
-\includegraphics{prep_script_files/figure-latex/lavaan plot-1.pdf}
+\includegraphics{prep_script_files/figure-latex/unnamed-chunk-1-1.pdf}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}

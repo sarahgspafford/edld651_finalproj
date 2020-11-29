@@ -81,10 +81,12 @@ knitr::opts_chunk$set(echo = FALSE,
 # Methods
 
 ## Participants
+  Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures. The final sample comprised 360 individuals (50.2% female) aged 18-58 years old (*M* = 32.41 years, *SD* = 9.25). Partticiapnts were predominantly White (34%), followed by Black/African-American (33%), and Latino/Hispanic (32%). The distribution of sexual orientations in the study sample can be seen in Table 1. 
 
-Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. 
 
-## Material
+
+
+## Materials
 
 ## Procedure
 
@@ -95,6 +97,12 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 # Results
 
 ## Preliminary Analyses
+
+
+
+
+
+
 
 ```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
@@ -151,6 +159,24 @@ stridy_long <- stridy_wide %>%
 
 ```
 
+
+```{r demographics, include = FALSE}
+count(stridy)
+count(stridy, ethnic)
+count(stridy, gender)
+desc_sexori <- count(stridy, sexori)
+
+stridy$age <- as.numeric(stridy$age)
+mean(stridy$age, na.rm = TRUE)
+sd(stridy$age, na.rm = TRUE)
+range(stridy$age, na.rm = TRUE)
+```
+
+```{r sexori table, results='asis'}
+knitr::kable(desc_sexori,col.names = c('Sexual Orientation', 'Count'))
+```
+
+
 ```{r mean plot, results="asis"}
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
@@ -189,8 +215,7 @@ summary1 <-
               "max"       = ~ round(max(connect, na.rm = TRUE),2),
               "mean (sd)" = ~ qwraps2::mean_sd(connect, na_rm = TRUE))
   )
-table_total <- summary_table(stridy, summary1)
-table_total
+
 
 grouped_table <- summary_table(stridy%>%
                                  mutate_at('sexori', characterize),
@@ -204,26 +229,32 @@ grouped_table
   
   
 
-```{r regression, results="asis"}
+```{r regression, include = FALSE}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
 
 apa.aov.table(mod)
+```
 
 
-ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
+
+```{r regplot, results="asis"}
+dis_plot <- ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
    geom_smooth(method = "lm") +
   labs(x = "Discrimination", y = "Pychological Wellbeing") +
   theme(text=element_text(size=12,  family="serif"))
   
-
+plot(dis_plot)
+```
+```{r labels}
+cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 ```
 
-```{r correlation panels, results="asis"}
-cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
-pairs.panels(stridy[,-c(1:4)], 
+```{r correlation panels, results="asis"}
+
+pairs_plot <- pairs.panels(stridy[,-c(1:4)], 
              method = "pearson", 
              hist.col = "darkmagenta",
              density = FALSE,
@@ -231,21 +262,19 @@ pairs.panels(stridy[,-c(1:4)],
              lm = TRUE, 
              labels = cor_labels)
 
-cor.mat <- cor(stridy[,-c(1:4)], use = 'pairwise.complete.obs')
-round(cor.mat,3)
-
 ```
 
 
-```{r lavaan plot }
-
+```{r lavaan, include = FALSE}
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
 fit <- sem(model, data = stridy)
 summary(fit)
 
 labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
+```
 
+```{r, results='asis'}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
 
