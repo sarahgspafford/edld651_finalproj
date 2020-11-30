@@ -6,7 +6,7 @@ author:
   - name          : "Maggie Head"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "Postal address"
+    address       : "1215 University of Oregon, Eugene, OR 97403-1215"
     email         : "mhead@uoregon.edu"
   
   - name          : "Sarah Spafford"
@@ -20,7 +20,7 @@ affiliation:
     institution   : "University of Oregon"
 
 authornote: |
-  Data for this project was taken from Project STRIDE: Stress, Identity and Mental Health. (Meyer, Ilan H., Dohrenwend, Bruce Philip, Schwartz, Sharon, Hunter, Joyce, and Kertzner, Robert M. Project STRIDE: Stress, Identity, and Mental Health, New York City, 2004-2005. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2018-11-28. https://doi.org/10.3886/ICPSR35525.v2)
+  This study utilized data from Project STRIDE: Stress, Identity and Mental Health, which was funded by the National Institutes of Health/National Institute of Mental Health (Grant#: 5R01MH066058-03).
 
 abstract: |
   This will be an abstract.
@@ -36,16 +36,13 @@ floatsintext      : yes
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : yes
+linenumbers       : no
 mask              : no
 draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output:
-  papaja::apa6_pdf:
-    citation_package: biblatex
-    always_allow_html: true
+output            : papaja::apa6_pdf
 ---
 
 ```{r libraries}
@@ -64,13 +61,14 @@ library(lavaan)
 library(lavaanPlot)
 library(magick)
 library(apaTables)
+library(knitr)
 ```
 
 ```{r setup}
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       message = FALSE,
-                     eval=TRUE
+                      eval=TRUE
                      )
 ```
 
@@ -189,8 +187,25 @@ mean_plot <- stridy %>%
   ylab("Average Discriminatory Experiences")+
   theme(text=element_text(size=16,  family="serif"))
 plot(mean_plot)
-```
+# Introduction
+Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see @thoits2010, for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green & Feinstein, 2012), eating disorders (Parker & Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
+  
+Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim & Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
+```{r means, include=FALSE}
+mean_age <- mean(stridy$age, na.rm = TRUE)
 
+sd_age <- sd(stridy$age, na.rm = TRUE)
+
+tabyl(stridy$sexori, sort = TRUE) %>% 
+  kable()
+```
+# Methods
+## Participants
+This study utilizes data from Project STRIDE: Stress, Identity and Mental Health [@projectstride]. Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. Case quota sampling methods were used in order to obtain a sample with adequate representation based on age group, sexual orientation, gender, and race/ethnicity [@projectstridemethod]. For the present study, a subset of data was utilized that included all participants who self-identified as gay, lesbian, queer, bisexual, homosexual, or "other - LGB" and had valid responses to the psychological wellbeing scale at time point 2, discriminatory experiences at time point 1, chronic strain at time point 2, and social connectedness (_n_ = 360). Participants were aged 18-59 years (_M_ = `r mean_age`, _SD_ = `r sd_age`) and the majority identified as gay (_n_ = 160, 44.4%), lesbian (_n_ = 104, 28.8%), or bisexual (_n_ = 63, 17.5%), while 3.3% identified as queer (_n_ = 12), 4.4% identified as homosexual (_n_ = 16), and 1.4% identified as "other LGB" (_n_ = 5). See Table 1 for additional descriptive statistics.
+ 
+  __Table 1.__
+
+_Descriptive statistics for independent and dependent variables_
 ```{r summary table, results= "asis"}
 options(qwraps2_markup = "markdown")
 summary1 <-
@@ -215,27 +230,41 @@ summary1 <-
               "max"       = ~ round(max(connect, na.rm = TRUE),2),
               "mean (sd)" = ~ qwraps2::mean_sd(connect, na_rm = TRUE))
   )
+table_total <- summary_table(stridy, summary1)
+table_total
+```
+__Table 2.__
 
 
+_Descriptive statistics of independent and dependent variables by sexual orientation_
+```{r summary table 2, results="asis"}
 grouped_table <- summary_table(stridy%>%
                                  mutate_at('sexori', characterize),
                                summaries = summary1, by = c("sexori"))
 grouped_table
 ```
+## Measures
+### Discriminatory experiences
+The discriminatory experiences 8-item measure was adapted from @williams1997 to be inclusive of all minority groups (e.g. gender minorities). This scale assessed how often discriminatory experiences (e.g. being treated with less respect, being threatened or harassed) occurred throughout their lifetimes. Each question was rated on a 4-point scale (1 = _"often"_ through 4 = _"never"_) and coded so that higher scores represented more discriminatory experiences [@projectstridemethod]. For these analyses, the total number of types (0-8) of everyday discrimination experiences were used.
 
-## Primary Analyses
+### Chronic strain
+The chronic strain measure was adapted from a scale by @wheaton1999, which measures strain in 9 areas of life, including general problems, financial issues, work relationships, parenting, family, social life, residence, and health. Responses were coded such that higher scores indicated higher levels of chronic strain [@projectstridemethod].
 
-  A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences was negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$.
-  
-  
+### Social connectedness
+Social connectedness was contextualized as connectedness to the gay community, as measured by an 8-item scale adapted from @mills2001 to be more relevant to the geographic area. Each response was rated from 1 (_"agree strongly"_) to 4 (_"disagree strongly"_) and coded so that higher scores indicated a greater level of connectedness to the gay community [@projectstridemethod].
 
 ```{r regression, include = FALSE}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
+### Psychological wellbeing
+Psychological wellbeing was assessed using an 18-item measure adapted from @ryff1989 and @ryffkeyes1995. This measured psychological wellbeing on six dimensions including dimensions of self-acceptance, purpose in life, environmental mastery, positive relations with others, personal growth, and autonomy. All responses were coded such that higher scores indicated higher levels of wellbeing [@projectstridemethod].
 
 apa.aov.table(mod)
 ```
+## Procedure
+For additional details on data collection procedures for Project STRIDE, please see @projectstridemethod.
 
+## Data analysis
 
 
 ```{r regplot, results="asis"}
@@ -246,6 +275,24 @@ dis_plot <- ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
   theme(text=element_text(size=12,  family="serif"))
   
 plot(dis_plot)
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+# Results
+## Preliminary Analyses
+Figure 1 displays the average number of everyday discriminatory experiences according to sexual orientation.
+
+```{r mean plot, results="asis",fig.cap = "Experiences of everyday discrimination according to sexual orientation.", fig.align = "center"}
+mean_plot <- stridy %>% 
+  group_by(sexori) %>% 
+  summarize(mean_disc = mean(dis_d_total)) %>% 
+  ggplot(aes(sexori, mean_disc)) +
+  geom_col(fill = "plum4", alpha = .75) +
+  labs(title = "Experiences of Everyday Discrimination",
+       subtitle = "According to Sexual Orientation") +
+  xlab("Sexual Orientation") +
+  ylab("Average Discriminatory Experiences")+
+  theme(text=element_text(size=16,  family="serif"))
+plot(mean_plot)
 ```
 ```{r labels}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
@@ -253,6 +300,8 @@ cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wel
 
 
 ```{r correlation panels, results="asis"}
+```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7, fig.cap = "Correlation panels for all variables included in the model.", fig.align = "center"}
+cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
 pairs_plot <- pairs.panels(stridy[,-c(1:4)], 
              method = "pearson", 
@@ -262,10 +311,29 @@ pairs_plot <- pairs.panels(stridy[,-c(1:4)],
              lm = TRUE, 
              labels = cor_labels)
 
+cor.mat <- cor(stridy[,-c(1:4)], use = 'pairwise.complete.obs')
+knitr::kable(round(cor.mat,3))
 ```
 
+## Primary Analyses
+```{r regression, include=FALSE}
+mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
+summary(lm.beta(mod))
+
+apa.aov.table(mod)
+```
+A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Figure 3 displays the relationship between everday discrimination and psychological wellbeing. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$. Figure 4 displays the path model with corresponding beta coefficients. 
+
+```{r regression plot, echo=FALSE, fig.cap = "Effect of everyday experiences of discrimination on psychological wellbeing in sexual minorities.", fig.align = "center"}
+ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
+   geom_point(color = "orange") +
+   geom_smooth(method = "lm") +
+  labs(x = "Discrimination", y = "Pychological Wellbeing") +
+  theme(text=element_text(size=12,  family="serif"))
+```
 
 ```{r lavaan, include = FALSE}
+```{r lavaan, include=FALSE}
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
 fit <- sem(model, data = stridy)
@@ -275,6 +343,7 @@ labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimina
 ```
 
 ```{r, results='asis'}
+```{r lavaan plot, echo=FALSE, fig.cap = "Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing.", fig.align = "center"}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
 
