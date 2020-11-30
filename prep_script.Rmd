@@ -187,10 +187,8 @@ mean_plot <- stridy %>%
   ylab("Average Discriminatory Experiences")+
   theme(text=element_text(size=16,  family="serif"))
 plot(mean_plot)
-# Introduction
-Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see @thoits2010, for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green & Feinstein, 2012), eating disorders (Parker & Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
-  
-Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim & Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
+```
+
 ```{r means, include=FALSE}
 mean_age <- mean(stridy$age, na.rm = TRUE)
 
@@ -253,11 +251,12 @@ The chronic strain measure was adapted from a scale by @wheaton1999, which measu
 ### Social connectedness
 Social connectedness was contextualized as connectedness to the gay community, as measured by an 8-item scale adapted from @mills2001 to be more relevant to the geographic area. Each response was rated from 1 (_"agree strongly"_) to 4 (_"disagree strongly"_) and coded so that higher scores indicated a greater level of connectedness to the gay community [@projectstridemethod].
 
+### Psychological wellbeing
+Psychological wellbeing was assessed using an 18-item measure adapted from @ryff1989 and @ryffkeyes1995. This measured psychological wellbeing on six dimensions including dimensions of self-acceptance, purpose in life, environmental mastery, positive relations with others, personal growth, and autonomy. All responses were coded such that higher scores indicated higher levels of wellbeing [@projectstridemethod].
+
 ```{r regression, include = FALSE}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
-### Psychological wellbeing
-Psychological wellbeing was assessed using an 18-item measure adapted from @ryff1989 and @ryffkeyes1995. This measured psychological wellbeing on six dimensions including dimensions of self-acceptance, purpose in life, environmental mastery, positive relations with others, personal growth, and autonomy. All responses were coded such that higher scores indicated higher levels of wellbeing [@projectstridemethod].
 
 apa.aov.table(mod)
 ```
@@ -275,6 +274,8 @@ dis_plot <- ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
   theme(text=element_text(size=12,  family="serif"))
   
 plot(dis_plot)
+```
+
 We used `r cite_r("r-references.bib")` for all our analyses.
 
 # Results
@@ -299,7 +300,7 @@ cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wel
 ```
 
 
-```{r correlation panels, results="asis"}
+
 ```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7, fig.cap = "Correlation panels for all variables included in the model.", fig.align = "center"}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
@@ -332,7 +333,7 @@ ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
   theme(text=element_text(size=12,  family="serif"))
 ```
 
-```{r lavaan, include = FALSE}
+
 ```{r lavaan, include=FALSE}
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
@@ -342,7 +343,7 @@ summary(fit)
 labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 ```
 
-```{r, results='asis'}
+
 ```{r lavaan plot, echo=FALSE, fig.cap = "Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing.", fig.align = "center"}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
