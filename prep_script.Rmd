@@ -160,12 +160,12 @@ tabyl(stridy$sexori, sort = TRUE) %>%
 # Methods
 ## Participants
 Project STRIDE [@projectstride] participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino [@projectstride]. Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures (_n_ = 360). Participants were aged 18-59 years (_M_ = `r mean_age`, _SD_ = `r sd_age`) and were predominantly White (34%), followed by Black/African-American (33%), and Latino/Hispanic (32%). The distribution of sexual orientations in the study sample can be seen in Table 1. 
-
+\newpage
   __Table 1.__
 
 _Distribution of self-identified sexual orientations_
 ```{r sexori table, results='asis'}
-knitr::kable(desc_sexori,col.names = c('Sexual Orientation', 'Count'))
+kable(desc_sexori,col.names = c('Sexual Orientation', 'Count'))
 ```
 
 ## Measures
@@ -194,7 +194,7 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 ## Preliminary Analyses
   Missing data were minimal; thus, listwise deletion was employed. Means, standard deviations, minimum and maximum values of the main study measures for the total sample can be seen in Table 2. Means, standard deviations, minimum and maximum values of the main study variables according to sexual orientation can be seen in Table 3. Of particular concern is the substantial number of discriminatory experiences reported by participants. Figure 1 displays the average number of everyday discriminatory experiences according to sexual orientation. Pearson bivariate correlations revealed small to moderate correlations among the main study variables (see Figure 2).
 
- 
+ \newpage
  __Table 2.__
 
 _Descriptive statistics for main study variables._
@@ -225,6 +225,7 @@ summary1 <-
 table_total <- summary_table(stridy, summary1)
 table_total
 ```
+\newpage
 __Table 3.__
 
 _Descriptive statistics for main study variables by sexual orientation_
@@ -234,8 +235,10 @@ grouped_table <- summary_table(stridy%>%
                                summaries = summary1, by = c("sexori"))
 grouped_table
 ```
+__Figure 1.__
 
-```{r mean plot, results="asis",fig.cap = "Experiences of everyday discrimination according to sexual orientation.", fig.align = "center"}
+_Experiences of everyday discrimination according to sexual orientation._
+```{r mean plot, results="asis", fig.height=3, fig.width=5, fig.align = "center"}
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
@@ -245,15 +248,17 @@ mean_plot <- stridy %>%
        subtitle = "According to Sexual Orientation") +
   xlab("Sexual Orientation") +
   ylab("Average Discriminatory Experiences")+
-  theme(text=element_text(size=16,  family="serif"))
+  theme(text=element_text(size=12,  family="serif"))
 plot(mean_plot)
 ```
 
 ```{r labels}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 ```
+__Figure 2.__
 
-```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7, fig.cap = "Correlation Panels and Distributions For All Variables Included in the Model.", fig.align = "center"}
+_Correlation Panels and Distributions For All Variables Included in the Model._
+```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7, fig.align = "center"}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
 pairs_plot <- pairs.panels(stridy[,-c(1:4)], 
@@ -274,8 +279,10 @@ summary(lm.beta(mod))
 apa.aov.table(mod)
 ```
 A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$. Figure 3 displays the relationship between everyday discrimination and psychological wellbeing. Figure 4 displays the path model with corresponding beta coefficients. 
+__Figure 3.__
 
-```{r regression plot, echo=FALSE, fig.cap = "Effect of everyday experiences of discrimination on psychological wellbeing in sexual minorities.", fig.align = "center"}
+_Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing._
+```{r regression plot, echo=FALSE, fig.align = "center"}
 ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
    geom_smooth(method = "lm") +
@@ -291,8 +298,10 @@ summary(fit)
 
 labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 ```
+__Figure 4.__
 
-```{r lavaan plot, echo=FALSE, fig.cap = "Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing.", fig.align = "center"}
+_Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing._
+```{r lavaan plot, echo=FALSE, fig.align = "center"}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
 
