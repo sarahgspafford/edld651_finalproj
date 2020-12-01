@@ -6,13 +6,12 @@
   english,
   man,floatsintext]{apa6}
 \usepackage{lmodern}
-\usepackage{amsmath}
+\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -40,7 +39,6 @@
 \hypersetup{
   pdftitle={EDLD 651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals With Marginalized Sexual Orientations},
   pdfauthor={Maggie Head1, Sarah Spafford1, \& Heather Terral1},
-  pdflang={en-EN},
   pdfkeywords={keywords},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -54,7 +52,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -131,29 +129,6 @@
 \else
   \usepackage[shorthands=off,main=english]{babel}
 \fi
-\ifluatex
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc} % for \widthof, \maxof
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\maxof{\widthof{#1}}{\csllabelwidth}}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth}{#1}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{EDLD 651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals With Marginalized Sexual Orientations}
 \author{Maggie Head\textsuperscript{1}, Sarah Spafford\textsuperscript{1}, \& Heather Terral\textsuperscript{1}}
@@ -182,7 +157,7 @@ This will be an abstract.
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see Thotis, 2010, for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green \& Feinstein, 2012), eating disorders (Parker \& Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term ``minority stress'' has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
+Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions (Frost et al., 2013). An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health (see Thotis, 2010, for a review), and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders (Mohd, 2008). It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders (Green \& Feinstein, 2012), eating disorders (Parker \& Harriger, 2020), deliberate self-injury (King et al., 2008), suicidality, and suicide attempts (Haas et al., 2011). The term \enquote{minority stress} has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status (Meyer, 1995). The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol (Korous et al., 2017) and cardiovascular reactivity (Panza et al., 2019). However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization (Meyer et al., 2008).
 Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim \& Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals.
 
 \hypertarget{methods}{%
@@ -191,6 +166,7 @@ Given that morbidity and mortality is intimately tied to social and interpersona
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016). Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures. The final sample comprised 360 individuals (50.2\% female) aged 18-58 years old (\emph{M} = 32.41 years, \emph{SD} = 9.25). Partticiapnts were predominantly White (34\%), followed by Black/African-American (33\%), and Latino/Hispanic (32\%). The distribution of sexual orientations in the study sample can be seen in Table 1.
 
@@ -208,6 +184,10 @@ We used R (Version 4.0.3; R Core Team, 2020) and the R-packages \emph{apaTables}
 Project STRIDE (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016) participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016). Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures (\emph{n} = 360). Participants were aged 18-59 years (\emph{M} = 32.41, \emph{SD} = 9.25) and were predominantly White (34\%), followed by Black/African-American (33\%), and Latino/Hispanic (32\%). The distribution of sexual orientations in the study sample can be seen in Table 1.
 >>>>>>> Stashed changes
 
+=======
+Project STRIDE (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016) participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino (Meyer et al., 2016). Participants were excluded from the present study if they identified as heterosexual or did not complete the main study measures (\emph{n} = 360). Participants were aged 18-59 years (\emph{M} = 32.41, \emph{SD} = 9.25) and were predominantly White (34\%), followed by Black/African-American (33\%), and Latino/Hispanic (32\%). The distribution of sexual orientations in the study sample can be seen in Table 1.
+
+>>>>>>> master
 \textbf{Table 1.}
 
 \emph{Distribution of self-identified sexual orientations}
@@ -230,23 +210,67 @@ Other - LGB & 5\\
 \hline
 \end{tabular}
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 \hypertarget{methods-1}{%
 \section{Methods}\label{methods-1}}
+=======
+\hypertarget{measures}{%
+\subsection{Measures}\label{measures}}
+>>>>>>> master
 
-\hypertarget{participants-1}{%
-\subsection{Participants}\label{participants-1}}
+\hypertarget{discriminatory-experiences}{%
+\subsubsection{Discriminatory experiences}\label{discriminatory-experiences}}
 
-This study utilizes data from Project STRIDE: Stress, Identity and Mental Health (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016). Project STRIDE participants included individuals who had been residing in New York City for a minimum of two years, self-identified as lesbian, gay, bisexual (LGB), or straight, and self-identified as White, Black, or Latino (Meyer, Dohrenwend, Schwartz, Hunter, \& Kertzner, 2016). Case quota sampling methods were used in order to obtain a sample with adequate representation based on age group, sexual orientation, gender, and race/ethnicity (Meyer, Frost, Narvaez, \& Dietrich, 2006). For the present study, a subset of data was utilized that included all participants who self-identified as gay, lesbian, queer, bisexual, homosexual, or ``other - LGB'' and had valid responses to the psychological wellbeing scale at time point 2, discriminatory experiences at time point 1, chronic strain at time point 2, and social connectedness (\emph{n} = 360). Participants were aged 18-59 years (\emph{M} = 32.41, \emph{SD} = 9.25) and the majority identified as gay (\emph{n} = 160, 44.4\%), lesbian (\emph{n} = 104, 28.8\%), or bisexual (\emph{n} = 63, 17.5\%), while 3.3\% identified as queer (\emph{n} = 12), 4.4\% identified as homosexual (\emph{n} = 16), and 1.4\% identified as ``other LGB'' (\emph{n} = 5). See Table 1 for additional descriptive statistics.
+The discriminatory experiences 8-item measure was adapted from Williams, Yu, Jackson, and Anderson (1997) to be inclusive of all minority groups (e.g.~gender minorities). This scale assessed how often discriminatory experiences (e.g.~being treated with less respect, being threatened or harassed) occurred throughout their lifetimes. Each question was rated on a 4-point scale (1 = \emph{\enquote{often}} through 4 = \emph{\enquote{never}}) and coded so that higher scores represented more discriminatory experiences (Meyer, Frost, Narvaez, \& Dietrich, 2006). For these analyses, the total number of types (0-8) of everyday discrimination experiences were used.
 
-\textbf{Table 1.}
+\hypertarget{chronic-strain}{%
+\subsubsection{Chronic strain}\label{chronic-strain}}
 
+The chronic strain measure was adapted from a scale by Wheaton (1999), which measures strain in 9 areas of life, including general problems, financial issues, work relationships, parenting, family, social life, residence, and health. Responses were coded such that higher scores indicated higher levels of chronic strain (Meyer et al., 2006).
+
+\hypertarget{social-connectedness}{%
+\subsubsection{Social connectedness}\label{social-connectedness}}
+
+Social connectedness was contextualized as connectedness to the gay community, as measured by an 8-item scale adapted from Mills et al. (2001) to be more relevant to the geographic area. Each response was rated from 1 (\emph{\enquote{agree strongly}}) to 4 (\emph{\enquote{disagree strongly}}) and coded so that higher scores indicated a greater level of connectedness to the gay community (Meyer et al., 2006).
+
+\hypertarget{psychological-wellbeing}{%
+\subsubsection{Psychological wellbeing}\label{psychological-wellbeing}}
+
+Psychological wellbeing was assessed using an 18-item measure adapted from Ryff (1989) and Ryff and Keyes (1995). This measured psychological wellbeing on six dimensions including dimensions of self-acceptance, purpose in life, environmental mastery, positive relations with others, personal growth, and autonomy. All responses were coded such that higher scores indicated higher levels of wellbeing (Meyer et al., 2006).
+
+\hypertarget{procedure}{%
+\subsection{Procedure}\label{procedure}}
+
+For additional details on data collection procedures for Project STRIDE, please see Meyer et al. (2006).
+
+\hypertarget{data-analytic-strategy-and-hypotheses}{%
+\subsection{Data Analytic Strategy and Hypotheses}\label{data-analytic-strategy-and-hypotheses}}
+
+Prior to the main analysis, data were screened for missingness. Pearson bivariate correlations were conducted among discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing. To examine the proposed model, a multivariate regression analysis was conducted. Discriminatory experiences, chronic strain, and social connectedness were entered as the predictor variables. Psychological wellbeing was entered as the outcome variable. We expected a negative association between discriminatory experiences and psychological wellbeing (Hypothesis 1). We also expected a negative association between chronic strain and psychological wellbeing (Hypothesis 2). In contrast, we expected a positive association between social connectedness and psychological wellbeing (Hypothesis 3).
+
+We used R (Version 3.6.2; R Core Team, 2020) and the R-packages \emph{apaTables} (Version 2.0.5; Stanley, 2018), \emph{dplyr} (Version 1.0.2; Wickham et al., 2020), \emph{forcats} (Version 0.4.0; Wickham, 2019a), \emph{gdtools} (Version 0.2.2; Gohel, Wickham, Henry, \& Ooms, 2020), \emph{ggiraphExtra} (Version 0.3.0; Moon, 2020), \emph{ggplot2} (Version 3.3.2; Wickham, 2016), \emph{haven} (Version 2.2.0; Wickham \& Miller, 2020), \emph{janitor} (Version 2.0.1; Firke, 2020), \emph{knitr} (Version 1.28; Xie, 2015), \emph{lavaan} (Version 0.6.7; Rosseel, 2012; Lishinski, 2018), \emph{lavaanPlot} (Version 0.5.1; Lishinski, 2018), \emph{lm.beta} (Version 1.5.1; Behrendt, 2014), \emph{magick} (Version 2.5.2; Ooms, 2020, 2020), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{probemod} (Tan, 2015), \emph{psych} (Version 2.0.9; Revelle, 2020), \emph{purrr} (Version 0.3.3; Henry \& Wickham, 2019), \emph{qwraps2} (Version 0.5.0; DeWitt, 2020), \emph{readr} (Version 1.3.1; Wickham, Hester, \& Francois, 2018), \emph{rio} (Version 0.5.16; Chan, Chan, Leeper, \& Becker, 2018), \emph{rockchalk} (Version 1.8.144; Johnson, 2019), \emph{stringr} (Version 1.4.0; Wickham, 2019b), \emph{tibble} (Version 3.0.3; Müller \& Wickham, 2020), \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020), and \emph{tidyverse} (Version 1.3.0; Wickham, Averick, et al., 2019) for all our analyses.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{preliminary-analyses}{%
+\subsection{Preliminary Analyses}\label{preliminary-analyses}}
+
+Missing data were minimal; thus, listwise deletion was employed. Means, standard deviations, minimum and maximum values of the main study measures for the total sample can be seen in Table 2. Means, standard deviations, minimum and maximum values of the main study variables according to sexual orientation can be seen in Table 3. Of particular concern is the substantial number of discriminatory experiences reported by participants. Figure 1 displays the average number of everyday discriminatory experiences according to sexual orientation. Pearson bivariate correlations revealed small to moderate correlations among the main study variables (see Figure 2).
+
+\textbf{Table 2.}
+
+<<<<<<< HEAD
 \emph{Descriptive statistics for independent and dependent variables}
 =======
 \textbf{Table 2.}
 
 \emph{Descriptive statistics for main study variables.}
 >>>>>>> Stashed changes
+=======
+\emph{Descriptive statistics for main study variables.}
+>>>>>>> master
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -276,6 +300,7 @@ This study utilizes data from Project STRIDE: Stress, Identity and Mental Health
 \bottomrule
 \end{longtable}
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 \textbf{Table 2.}
 
@@ -285,6 +310,11 @@ This study utilizes data from Project STRIDE: Stress, Identity and Mental Health
 
 \emph{Descriptive statistics for main study variables by sexual orientation}
 >>>>>>> Stashed changes
+=======
+\textbf{Table 3.}
+
+\emph{Descriptive statistics for main study variables by sexual orientation}
+>>>>>>> master
 
 \begin{longtable}[]{@{}lllllll@{}}
 \toprule
@@ -608,6 +638,7 @@ Other - LGB (N = 5)\strut
 \bottomrule
 \end{longtable}
 
+<<<<<<< HEAD
 \hypertarget{measures}{%
 \subsection{Measures}\label{measures}}
 
@@ -671,6 +702,8 @@ We used R (Version 4.0.2; R Core Team, 2020) and the R-packages \emph{apaTables}
 
 Figure 1 displays the average number of everyday discriminatory experiences according to sexual orientation.
 
+=======
+>>>>>>> master
 \begin{figure}
 
 {\centering \includegraphics{prep_script_files/figure-latex/mean plot-1} 
@@ -686,27 +719,13 @@ Figure 1 displays the average number of everyday discriminatory experiences acco
 
 }
 
-\caption{Correlation panels for all variables included in the model.}(\#fig:correlation panels)
+\caption{Correlation Panels and Distributions For All Variables Included in the Model.}(\#fig:correlation panels)
 \end{figure}
-
-\begin{tabular}{l|r|r|r|r}
-\hline
-  & chr\_gen\_2 & perwellb\_2 & dis\_d\_total & connect\\
-\hline
-chr\_gen\_2 & 1.000 & -0.203 & 0.014 & -0.019\\
-\hline
-perwellb\_2 & -0.203 & 1.000 & -0.114 & 0.158\\
-\hline
-dis\_d\_total & 0.014 & -0.114 & 1.000 & -0.016\\
-\hline
-connect & -0.019 & 0.158 & -0.016 & 1.000\\
-\hline
-\end{tabular}
 
 \hypertarget{primary-analyses}{%
 \subsection{Primary Analyses}\label{primary-analyses}}
 
-A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, \(\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03\). Figure 3 displays the relationship between everday discrimination and psychological wellbeing. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, \(\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001\). Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, \(\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001\). Taken together, all three predictors explained approximately 7.7\% of the variance in psychological wellbeing, \(F(3,356)=9.90, p<.001, R^{2}=.077\). Figure 4 displays the path model with corresponding beta coefficients.
+A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, \(\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03\). Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, \(\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001\). Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, \(\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001\). Taken together, all three predictors explained approximately 7.7\% of the variance in psychological wellbeing, \(F(3,356)=9.90, p<.001, R^{2}=.077\). Figure 3 displays the relationship between everyday discrimination and psychological wellbeing. Figure 4 displays the path model with corresponding beta coefficients.
 
 \begin{figure}
 <<<<<<< Updated upstream
@@ -733,19 +752,22 @@ A multiple regression analysis was conducted to examine the effects of discrimin
 \caption{Effect of everyday experiences of discrimination on psychological wellbeing in sexual minorities.}(\#fig:regression plot)
 \end{figure}
 
-\begin{figure}
+\hypertarget{htmlwidget-18f15d8af5beceea22b1}{}
 
-{\centering \includegraphics{prep_script_files/figure-latex/lavaan plot-1} 
-
+<<<<<<< HEAD
 }
 
 >>>>>>> Stashed changes
 \caption{Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing.}(\#fig:lavaan plot)
 \end{figure}
+=======
+(\#fig:lavaan plot)Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing.
+>>>>>>> master
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
+Findings that connectedness was positively associated with psychological well-being are simultaneously intuitive and in synchrony with the literature.
 \newpage
 
 \hypertarget{references}{%
@@ -756,18 +778,17 @@ A multiple regression analysis was conducted to examine the effects of discrimin
 \setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
 \leavevmode\hypertarget{ref-R-papaja}{}%
-Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
+Aust, F., \& Barth, M. (2020). \emph{papaja: Create APA manuscripts with R Markdown}. Retrieved from \url{https://github.com/crsh/papaja}
 
 \leavevmode\hypertarget{ref-R-lm.beta}{}%
 Behrendt, S. (2014). \emph{Lm.beta: Add standardized regression coefficients to lm-objects}. Retrieved from \url{https://CRAN.R-project.org/package=lm.beta}
 
 \leavevmode\hypertarget{ref-R-rio}{}%
-Chan, C., Chan, G. C., Leeper, T. J., \& Becker, J. (2018). \emph{Rio: A swiss-army knife for data file i/o}.
+Chan, C.-h., Chan, G. C., Leeper, T. J., \& Becker, J. (2018). \emph{Rio: A swiss-army knife for data file i/o}.
 
 \leavevmode\hypertarget{ref-R-qwraps2}{}%
-DeWitt, P. (2020). \emph{qwraps2: Quick wraps 2}. Retrieved from \url{https://CRAN.R-project.org/package=qwraps2}
+DeWitt, P. (2020). \emph{Qwraps2: Quick wraps 2}. Retrieved from \url{https://CRAN.R-project.org/package=qwraps2}
 
 \leavevmode\hypertarget{ref-R-janitor}{}%
 Firke, S. (2020). \emph{Janitor: Simple tools for examining and cleaning dirty data}. Retrieved from \url{https://CRAN.R-project.org/package=janitor}
@@ -782,10 +803,10 @@ Henry, L., \& Wickham, H. (2019). \emph{Purrr: Functional programming tools}. Re
 Johnson, P. E. (2019). \emph{Rockchalk: Regression estimation and presentation}. Retrieved from \url{https://CRAN.R-project.org/package=rockchalk}
 
 \leavevmode\hypertarget{ref-R-lavaanPlot}{}%
-Lishinski, A. (2018). \emph{lavaanPlot: Path diagrams for lavaan models via DiagrammeR}. Retrieved from \url{https://CRAN.R-project.org/package=lavaanPlot}
+Lishinski, A. (2018). \emph{LavaanPlot: Path diagrams for lavaan models via diagrammer}. Retrieved from \url{https://CRAN.R-project.org/package=lavaanPlot}
 
 \leavevmode\hypertarget{ref-projectstride}{}%
-Meyer, I. H., Dohrenwend, B. P., Schwartz, S., Hunter, J., \& Kertzner, R. M. (2016). Project STRIDE: Stress, identity, and mental health, new york city, 2004-2005: Version 2. Inter-University Consortium for Political; Social Research. \url{https://doi.org/10.3886/ICPSR35525.V2}
+Meyer, I. H., Dohrenwend, B. P., Schwartz, S., Hunter, J., \& Kertzner, R. M. (2016). Project stride: Stress, identity, and mental health, new york city, 2004-2005: Version 2. Inter-University Consortium for Political; Social Research. \url{https://doi.org/10.3886/ICPSR35525.V2}
 
 \leavevmode\hypertarget{ref-projectstridemethod}{}%
 Meyer, I. H., Frost, D. M., Narvaez, R., \& Dietrich, J. H. (2006). Project stride methodology and technical notes. \emph{Unpublished Manuscript}.
@@ -794,7 +815,7 @@ Meyer, I. H., Frost, D. M., Narvaez, R., \& Dietrich, J. H. (2006). Project stri
 Mills, T. C., Stall, R., Pollack, L., Paul, J. P., Binson, D., Canchola, J., \& Catania, J. A. (2001). Health-related characteristics of men who have sex with men: A comparison of those living in" gay ghettos" with those living elsewhere. \emph{American Journal of Public Health}, \emph{91}(6), 980.
 
 \leavevmode\hypertarget{ref-R-ggiraphExtra}{}%
-Moon, K.-W. (2020). \emph{ggiraphExtra: Make interactive 'ggplot2'. Extension to 'ggplot2' and 'ggiraph'}. Retrieved from \url{https://CRAN.R-project.org/package=ggiraphExtra}
+Moon, K.-W. (2020). \emph{GgiraphExtra: Make interactive 'ggplot2'. Extension to 'ggplot2' and 'ggiraph'}. Retrieved from \url{https://CRAN.R-project.org/package=ggiraphExtra}
 
 \leavevmode\hypertarget{ref-R-tibble}{}%
 Müller, K., \& Wickham, H. (2020). \emph{Tibble: Simple data frames}. Retrieved from \url{https://CRAN.R-project.org/package=tibble}
@@ -809,7 +830,7 @@ R Core Team. (2020). \emph{R: A language and environment for statistical computi
 Revelle, W. (2020). \emph{Psych: Procedures for psychological, psychometric, and personality research}. Evanston, Illinois: Northwestern University. Retrieved from \url{https://CRAN.R-project.org/package=psych}
 
 \leavevmode\hypertarget{ref-R-lavaan}{}%
-Rosseel, Y. (2012). {lavaan}: An {R} package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{http://www.jstatsoft.org/v48/i02/}
+Rosseel, Y. (2012). lavaan: An R package for structural equation modeling. \emph{Journal of Statistical Software}, \emph{48}(2), 1--36. Retrieved from \url{http://www.jstatsoft.org/v48/i02/}
 
 \leavevmode\hypertarget{ref-ryff1989}{}%
 Ryff, C. D. (1989). Happiness is everything, or is it? Explorations on the meaning of psychological well-being. \emph{Journal of Personality and Social Psychology}, \emph{57}(6), 1069.
@@ -818,7 +839,7 @@ Ryff, C. D. (1989). Happiness is everything, or is it? Explorations on the meani
 Ryff, C. D., \& Keyes, C. L. M. (1995). The structure of psychological well-being revisited. \emph{Journal of Personality and Social Psychology}, \emph{69}(4), 719.
 
 \leavevmode\hypertarget{ref-R-apaTables}{}%
-Stanley, D. (2018). \emph{apaTables: Create american psychological association (APA) style tables}. Retrieved from \url{https://CRAN.R-project.org/package=apaTables}
+Stanley, D. (2018). \emph{ApaTables: Create american psychological association (apa) style tables}. Retrieved from \url{https://CRAN.R-project.org/package=apaTables}
 
 \leavevmode\hypertarget{ref-R-probemod}{}%
 Tan, J. C. (2015). \emph{Probemod: Statistical tools for probing moderation effects}. Retrieved from \url{https://CRAN.R-project.org/package=probemod}
@@ -827,7 +848,7 @@ Tan, J. C. (2015). \emph{Probemod: Statistical tools for probing moderation effe
 Wheaton, B. (1999). The nature of stressors. In A. F. Horwitz \& T. L. Scheid (Eds.), \emph{A handbook for the study of mental health: Social contexts, theories, and systems} (pp. 176--197). New York: Oxford University Press.
 
 \leavevmode\hypertarget{ref-R-ggplot2}{}%
-Wickham, H. (2016). \emph{ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+Wickham, H. (2016). \emph{Ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
 
 \leavevmode\hypertarget{ref-R-forcats}{}%
 Wickham, H. (2019a). \emph{Forcats: Tools for working with categorical variables (factors)}. Retrieved from \url{https://CRAN.R-project.org/package=forcats}
@@ -836,7 +857,7 @@ Wickham, H. (2019a). \emph{Forcats: Tools for working with categorical variables
 Wickham, H. (2019b). \emph{Stringr: Simple, consistent wrappers for common string operations}. Retrieved from \url{https://CRAN.R-project.org/package=stringr}
 
 \leavevmode\hypertarget{ref-R-tidyverse}{}%
-Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the tidyverse. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-R-dplyr}{}%
 Wickham, H., François, R., Henry, L., \& Müller, K. (2020). \emph{Dplyr: A grammar of data manipulation}. Retrieved from \url{https://CRAN.R-project.org/package=dplyr}
@@ -848,15 +869,13 @@ Wickham, H., \& Henry, L. (2020). \emph{Tidyr: Tidy messy data}. Retrieved from 
 Wickham, H., Hester, J., \& Francois, R. (2018). \emph{Readr: Read rectangular text data}. Retrieved from \url{https://CRAN.R-project.org/package=readr}
 
 \leavevmode\hypertarget{ref-R-haven}{}%
-Wickham, H., \& Miller, E. (2020). \emph{Haven: Import and export 'SPSS', 'stata' and 'SAS' files}. Retrieved from \url{https://CRAN.R-project.org/package=haven}
+Wickham, H., \& Miller, E. (2020). \emph{Haven: Import and export 'spss', 'stata' and 'sas' files}. Retrieved from \url{https://CRAN.R-project.org/package=haven}
 
 \leavevmode\hypertarget{ref-williams1997}{}%
 Williams, D. R., Yu, Y., Jackson, J. S., \& Anderson, N. B. (1997). Racial differences in physical and mental health: Socio-economic status, stress and discrimination. \emph{Journal of Health Psychology}, \emph{2}(3), 335--351.
 
 \leavevmode\hypertarget{ref-R-knitr}{}%
-Xie, Y. (2015). \emph{Dynamic documents with {R} and knitr} (2nd ed.). Boca Raton, Florida: Chapman; Hall/CRC. Retrieved from \url{https://yihui.org/knitr/}
-
-\end{CSLReferences}
+Xie, Y. (2015). \emph{Dynamic documents with R and knitr} (2nd ed.). Boca Raton, Florida: Chapman; Hall/CRC. Retrieved from \url{https://yihui.org/knitr/}
 
 \endgroup
 
