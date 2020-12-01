@@ -43,9 +43,11 @@ draft             : no
 documentclass     : "apa6"
 classoption       : "man"
 output            : papaja::apa6_pdf
+always_allow_html: true
+
 ---
 
-```{r libraries}
+```{r libraries, warning = FALSE}
 library(papaja)
 r_refs("r-references.bib")
 library(haven)
@@ -293,7 +295,13 @@ lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", font
 
 
 # Discussion
+Findings that connectedness was positively associated with psychological well-being are simultaneously intuitive and in synchrony with the literature. For members of the LGB community, both physical and virtual spaces in which members can create and maintain meaningful relationships with similiarly identified individuals may be one method to increase resilience within this group.
+(Discuss discrimination and strain, intersectionality)
+In considering interventions to improve health and well-being among LGB communities, it is important to not place the burden on these groups; a preventative approach in line with a social ecological perspective must also include mechanisms designed to reduce both implicit and explicit bias in the  general population. Approval of LGBT+ issues has decreased among young people (FIND AND CITE), and the presidential administration of 2016 - 2020 took several actions during their tenure which further marginalized this population. Although this study did not measure social connectedness outside of the LGB community, future research examining perceived acceptance by the general population may better inform health promotion interventions for this group.
 
+
+## Strengths and Limitations
+The availability and tidyness of the data from this robust sample gathered by @projectstride are a clear strength of the present work. However, it is unclear whether or not these results are applicable to LGB members outside of New York City itself, and furthermore within rural areas. Future work may benefit from examining whether LGB individuals who relocate to large cities share similiar rates of discrimination and may be systematically different from community members who have no relocated.
 \newpage
 
 # References
