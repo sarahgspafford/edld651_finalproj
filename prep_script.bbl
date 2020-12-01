@@ -403,6 +403,34 @@
       \verb https://CRAN.R-project.org/package=tibble
       \endverb
     \endentry
+    \entry{R-magick}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=0f4f7df4d18c1270721b575fc1288184}{%
+           family={Ooms},
+           familyi={O\bibinitperiod},
+           given={Jeroen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f4f7df4d18c1270721b575fc1288184}
+      \strng{fullhash}{0f4f7df4d18c1270721b575fc1288184}
+      \strng{bibnamehash}{0f4f7df4d18c1270721b575fc1288184}
+      \strng{authorbibnamehash}{0f4f7df4d18c1270721b575fc1288184}
+      \strng{authornamehash}{0f4f7df4d18c1270721b575fc1288184}
+      \strng{authorfullhash}{0f4f7df4d18c1270721b575fc1288184}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 2.5.2}
+      \field{title}{magick: Advanced Graphics and Image-Processing in R}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=magick
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=magick
+      \endverb
+    \endentry
     \entry{R-base}{manual}{}
       \name{author}{1}{}{%
         {{hash=dcdebb6b35bff7c0568bf8c50ef8626d}{%
@@ -976,7 +1004,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{projectstride}
 \endrefsection
 \endinput
 
