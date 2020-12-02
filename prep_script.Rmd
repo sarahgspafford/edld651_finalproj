@@ -23,11 +23,11 @@ authornote: |
   This study utilized data from Project STRIDE: Stress, Identity and Mental Health, which was funded by the National Institutes of Health/National Institute of Mental Health (Grant#: 5R01MH066058-03).
 
 abstract: |
-  This will be an abstract.
+  Individuals with marginalized sexual orientations experience higher rates of physical and psychiatric comorbidities compared to their heterosexual counterparts. These disparities are considered the result of minority stress, such that the stress attached to navigating pervasive prejudice and discrimination precipitates deleterious mental health outcomes. Less is known about factors that are related to positive mental health outcomes in individuals with marginalized sexual orientations. Using data from 360 men and women with marginalized sexual orientations(i.e., lesbian, gay, bisexual, queer, or other LGB orientation) who participated in a three year longitudinal study in New York City, we examined the links between discriminatory experiences, chronic strain, social connectedness to the gay community, and psychological wellbeing. Results from a multiple regression analysis revealed discriminatory experiences and chronic strain were significantly negatively associated with psychological wellbeing. Consistent with hypotheses, social connectedness was significantly positively associated with psychological wellbeing. These findings provide further evidence for the relationship between minority stress and mental health and highlight the importance of social connectedness in promoting psychological wellbeing among LGBQ individuals.
   
   <!-- https://tinyurl.com/ybremelq -->
   
-keywords          : "keywords"
+keywords          : "minority stress, sexual minorities, LGBQ, health, social connectedness"
 wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
