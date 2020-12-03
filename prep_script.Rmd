@@ -79,7 +79,8 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Introduction
   Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions [@frost2015]. An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health [see @thotis2010], and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders [@salleh2008]. It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders [@green2012], eating disorders [@parker2020], deliberate self-injury [@king2008], suicidality, and suicide attempts [@haas2010]. The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status [@meyer1995]. The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol [@korous2017] and cardiovascular reactivity [@panza2019]. However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization [@frost2015].
-  Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support (Cohen, 2004; Pescosolido, 2011). Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health (Haslam et al., 2015). Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses (Austin et al., 2016). Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals (Kim & Fredriksen-Goldsen, 2016; Liao et al., 2016; Liu et al., 2019; Wang et al., 2012).Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
+  
+  Given that morbidity and mortality is intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support [@cohen2004 ; @pescosolido2011]. Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health [@haslam2015]. Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses [@austin2017]. Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals[@kim2017; @liao2016; @liu2020]. Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the longitudinal relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
 
 ```{r data import, include = FALSE}
 stride <- read_sav("data/project_stride_data.sav") %>% 
@@ -251,7 +252,6 @@ mean_plot <- stridy %>%
   theme(text=element_text(size=12,  family="serif"))
 plot(mean_plot)
 ```
-
 ```{r labels}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 ```
@@ -269,7 +269,6 @@ pairs_plot <- pairs.panels(stridy[,-c(1:4)],
              lm = TRUE, 
              labels = cor_labels)
 ```
-
 ## Primary Analyses
 
 ```{r regression, include=FALSE}
@@ -289,7 +288,6 @@ ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
   labs(x = "Discrimination", y = "Pychological Wellbeing") +
   theme(text=element_text(size=12,  family="serif"))
 ```
-
 ```{r lavaan, include=FALSE}
 model <- 'perwellb_2 ~ dis_d_total + chr_gen_2 + connect'
 
@@ -304,8 +302,6 @@ _Path model for the effect of discrimination, chronic strain, and social connect
 ```{r lavaan plot, echo=FALSE, fig.align = "center"}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
-
-
 # Discussion
 Findings that connectedness was positively associated with psychological well-being are simultaneously intuitive and in synchrony with the literature. For members of the LGB community, both physical and virtual spaces in which members can create and maintain meaningful relationships with similiarly identified individuals may be one method to increase resilience within this group.
 (Discuss discrimination and strain, intersectionality)
