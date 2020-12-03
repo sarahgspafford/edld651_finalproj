@@ -54,18 +54,16 @@ always_allow_html: true
 library(papaja)
 r_refs("r-references.bib")
 library(haven)
+library(rio)
 library(janitor)
 library(tidyverse)
 library(apaTables)
-library(rio)
 library(qwraps2)
 library(lm.beta)
-library(ggiraphExtra)
 library(psych)
 library(lavaan)
 library(lavaanPlot)
 library(magick)
-library(apaTables)
 library(knitr)
 ```
 
@@ -236,10 +234,12 @@ grouped_table <- summary_table(stridy%>%
                                summaries = summary1, by = c("sexori"))
 grouped_table
 ```
+
 __Figure 1.__
 
 _Experiences of everyday discrimination according to sexual orientation._
-```{r mean plot, results="asis", fig.height=3, fig.width=5, fig.align = "center"}
+
+```{r meanplot, results="asis", fig.height=3, fig.width=5}
 mean_plot <- stridy %>% 
   group_by(sexori) %>% 
   summarize(mean_disc = mean(dis_d_total)) %>% 
@@ -250,15 +250,18 @@ mean_plot <- stridy %>%
   xlab("Sexual Orientation") +
   ylab("Average Discriminatory Experiences")+
   theme(text=element_text(size=12,  family="serif"))
-plot(mean_plot)
+
+mean_plot
 ```
 ```{r labels}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 ```
+\newpage
 __Figure 2.__
 
 _Correlation Panels and Distributions For All Variables Included in the Model._
-```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7, fig.align = "center"}
+
+```{r correlation panels, echo=FALSE, fig.height=5, fig.width=7}
 cor_labels <- list(chr_gen_2 = "Chronic Strain", perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", connect = "Social Connectedness")
 
 pairs_plot <- pairs.panels(stridy[,-c(1:4)], 
@@ -269,8 +272,8 @@ pairs_plot <- pairs.panels(stridy[,-c(1:4)],
              lm = TRUE, 
              labels = cor_labels)
 ```
-## Primary Analyses
 
+## Primary Analyses
 ```{r regression, include=FALSE}
 mod <- lm(perwellb_2 ~  1 + dis_d_total + chr_gen_2 + connect, data = stridy)
 summary(lm.beta(mod))
@@ -278,10 +281,12 @@ summary(lm.beta(mod))
 apa.aov.table(mod)
 ```
 A multiple regression analysis was conducted to examine the effects of discriminatory experiences, chronic strain, social connectedness on psychological wellbeing among LGBQ individuals. When all variables were entered into the model, discriminatory experiences were negatively associated with psychological wellbeing, $\hat{\beta_{1}}=-0.05, SE(\hat{\beta_{1}})=-0.11, t(356)=-2.14, p=.03$. Likewise, consistent with hypothesis 2, chronic strain was significantly negatively associated with psychological wellbeing, $\hat{\beta_{2}}=-0.29, SE(\hat{\beta_{2}})=-0.20, t(356)=-3.91, p < .001$. Consistent with hypothesis 3, social connectedness was significantly positively associated with psychological wellbeing, $\hat{\beta_{3}}=0.24, SE(\hat{\beta_{3}})=0.15, t(356)=2.99, p < .001$. Taken together, all three predictors explained approximately 7.7% of the variance in psychological wellbeing, $F(3,356)=9.90, p<.001, R^{2}=.077$. Figure 3 displays the relationship between everyday discrimination and psychological wellbeing. Figure 4 displays the path model with corresponding beta coefficients. 
+
 __Figure 3.__
 
 _Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing._
-```{r regression plot, echo=FALSE, fig.align = "center"}
+
+```{r regression plot, echo=FALSE}
 ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
    geom_point(color = "orange") +
    geom_smooth(method = "lm") +
@@ -296,13 +301,17 @@ summary(fit)
 
 labels <- list(perwellb_2 = "Psychological Wellbeing", dis_d_total = "Discrimination", chr_gen_2 = "Chronic Strain", connect = "Social Connectedness")
 ```
+\newpage
 __Figure 4.__
 
 _Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing._
-```{r lavaan plot, echo=FALSE, fig.align = "center"}
+
+```{r lavaan plot, echo=FALSE}
 lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", fontname = "Garamond"), edge_options = list(color = "black"), coefs = T, stars = c("regress"))
 ```
+
 # Discussion
+
 Findings that connectedness was positively associated with psychological well-being are simultaneously intuitive and in synchrony with the literature. For members of the LGB community, both physical and virtual spaces in which members can create and maintain meaningful relationships with similiarly identified individuals may be one method to increase resilience within this group.
 (Discuss discrimination and strain, intersectionality)
 In considering interventions to improve health and well-being among LGB communities, it is important to not place the burden on these groups; a preventative approach in line with a social ecological perspective must also include mechanisms designed to reduce both implicit and explicit bias in the  general population. Approval of LGBT+ issues has decreased among young people (FIND AND CITE), and the presidential administration of 2016 - 2020 took several actions during their tenure which further marginalized this population. Although this study did not measure social connectedness outside of the LGB community, future research examining perceived acceptance by the general population may better inform health promotion interventions for this group.
