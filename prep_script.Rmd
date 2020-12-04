@@ -284,7 +284,7 @@ A multiple regression analysis was conducted to examine the effects of discrimin
 
 __Figure 3.__
 
-_Path model for the effect of discrimination, chronic strain, and social connectedness on psychological wellbeing._
+_Linear regression results demonstrating the effect of discrimination on psychological wellbeing._
 
 ```{r regression plot, echo=FALSE}
 ggplot(stridy, aes(x = dis_d_total, y = perwellb_2 )) +
