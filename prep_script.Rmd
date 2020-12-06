@@ -1,5 +1,5 @@
 ---
-title             : "EDLD 651 Final Project: Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals With Marginalized Sexual Orientations"
+title             : "Discriminatory Experiences, Chronic Strain, Social Connectedness, and Psychological Wellbeing Among Individuals With Marginalized Sexual Orientations"
 shorttitle        : "EDLD 651 Final Project"
 
 author: 
@@ -28,7 +28,6 @@ abstract: |
   <!-- https://tinyurl.com/ybremelq -->
   
 keywords          : "minority stress, sexual minorities, LGBQ, health, social connectedness"
-wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
 
@@ -75,7 +74,6 @@ knitr::opts_chunk$set(echo = FALSE,
                      )
 ```
 
-# Introduction
   Inherent to living with a marginalized identity is the excess stress that accompanies stigma-related experiences and discriminatory conditions [@frost2015]. An extensive body of literature demonstrates that chronic exposure to stress compromises physical and mental health [see @thotis2010], and ultimately elevates susceptibility to a myriad of physiological and psychiatric disorders [@salleh2008]. It is not surprising, then, that individuals who identify as gay, bisexual, lesbian, and queer (LGBQ) experience higher rates of psychopathology than their heterosexual counterparts, including substance use disorders [@green2012], eating disorders [@parker2020], deliberate self-injury [@king2008], suicidality, and suicide attempts [@haas2010]. The term “minority stress” has been used to describe the phenomenon of elevated mental health concerns resulting from the societal stigmatization of LGBQ sexual orientation status [@meyer1995]. The link between minority stress and poor health outcomes may be direct, such that discriminatory experiences lead to increased cortisol [@korous2017] and cardiovascular reactivity [@panza2019]. However, minority stress may also impact health indirectly through the cognitive burden, strain, and behavioral coping strategies that are required to navigate marginalization [@frost2015].
   
   Given that morbidity and mortality are intimately tied to social and interpersonal conditions, researchers have come to recognize the importance of relationships and support [@cohen2004 ; @pescosolido2011]. Social connectedness, which refers to the sense of subjective belonging that people feel in relation to individuals and groups of others, is considered a pivotal factor in individual and population-level health [@haslam2015]. Burgeoning evidence indicates that, among individuals with marginalized identities, connection with others who are marginalized for the same characteristic may mitigate detrimental stress responses [@austin2017]. Indeed, social connectedness is associated with positive health outcomes and has been found to buffer the negative effects of discrimination and perceived stress among many groups of marginalized individuals [@kim2017; @liao2016; @liu2020]. Yet, social connectedness is markedly overlooked in research examining the health of LGBQ individuals. Thus, the purpose of the current study was to examine the relationships between discriminatory experiences, chronic strain, social connectedness, and psychological wellbeing among LGBQ individuals. 
@@ -145,9 +143,6 @@ sd(stridy$age, na.rm = TRUE)
 range(stridy$age, na.rm = TRUE)
 ```
 
-
-
-
 ```{r means, include=FALSE}
 mean_age <- mean(stridy$age, na.rm = TRUE)
 
@@ -179,7 +174,6 @@ Social connectedness was contextualized as connectedness to the gay community, a
 
 ### Psychological wellbeing
 Psychological wellbeing was assessed using an 18-item measure adapted from @ryff1989 and @ryffkeyes1995. This measured psychological wellbeing on six dimensions including self-acceptance, purpose in life, environmental mastery, positive relations with others, personal growth, and autonomy. All responses were coded such that higher scores indicated higher levels of wellbeing [@projectstridemethod].
-
 
 ## Procedure
 For additional details on data collection procedures for Project STRIDE, please see @projectstridemethod.
@@ -312,9 +306,8 @@ lavaanPlot(model = fit, labels = labels, node_options = list(shape = "box", font
 
 # Discussion
 
-Findings that social connectedness was positively associated with psychological wellbeing are simultaneously intuitive and in synchrony with the literature. For members of the LGB community, both physical and virtual spaces in which members can create and maintain meaningful relationships with each other may be one method to increase resilience within these groups. Although this analysis did not examine how these variables may vary by additional identities, such as race/ethnicity and gender, intersectionality theory suggests that members of the LGB community who simulatenously hold additional marginalized identities would experience and report higher level of discrimination and strain than their relatively more privileged peers. 
+Findings that social connectedness was positively associated with psychological wellbeing are simultaneously intuitive and in synchrony with the literature. For members of the LGB community, both physical and virtual spaces in which members can create and maintain meaningful relationships with each other may be one method to increase resilience within these groups. Although this analysis did not examine how these variables may vary by additional identities, such as race/ethnicity and gender, intersectionality theory suggests that members of the LGB community who simulatenously hold additional marginalized identities would experience and report higher levels of discrimination and strain than their relatively more privileged peers. 
 In considering interventions to improve health and wellbeing among LGB communities, it is important to not place the burden on these groups; a preventative approach in line with a social ecological perspective must also include mechanisms designed to reduce both implicit and explicit bias in the  general population. Approval of LGBT+ individuals has decreased among young people in the United States ages 18 - 34 [@Miller2019]. Furthermore, the presidential administration of 2016 - 2020 took several actions during their tenure which further marginalized this population [@Acosta2020]. Examples include the removal of the LGBT issues page from the White House website within hours of the administration's commencement, and the attempted exclusion of trans people from United States military service. Although this study did not measure social connectedness outside of the LGB community, future research examining perceived acceptance by the general population may better inform health promotion interventions for this group.
-
 
 ## Strengths and Limitations
 The availability and tidyness of the data from this robust sample gathered by @projectstride are a clear strength of the present work. However, it is unclear whether or not these results are applicable to LGB members outside of New York City itself, and furthermore within rural areas. Future work may benefit from examining whether LGB individuals who relocate to large cities share similiar rates of discrimination and may be systematically different from community members who have not relocated.  Additionally, the intentional exclusion of trans people from this sample limits the richness of this dataset and interpretability. 
